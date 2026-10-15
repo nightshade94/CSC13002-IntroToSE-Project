@@ -1,0 +1,9 @@
+node_modules/
+dist/
+build/
+coverage/
+pnpm-lock.yaml
+.env
+.env.*
+# Giữ nguyên tài liệu hướng dẫn do người dùng cung cấp.
+AGENTS.md

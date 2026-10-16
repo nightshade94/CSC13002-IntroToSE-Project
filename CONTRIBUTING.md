@@ -39,13 +39,13 @@ Nhóm sử dụng Kanban Board trên Jira với các trạng thái:
 Backlog → Ready → In Progress → In Review → Done
 ```
 
-| Trạng thái | Ý nghĩa |
-| --- | --- |
-| Backlog | Công việc được ghi nhận nhưng chưa sẵn sàng thực hiện |
-| Ready | Yêu cầu đã rõ ràng và có thể bắt đầu |
-| In Progress | Thành viên đang thực hiện |
-| In Review | Đã hoàn thành phần triển khai và đang chờ PR review |
-| Done | PR đã merge và công việc đáp ứng Acceptance Criteria |
+| Trạng thái  | Ý nghĩa                                               |
+| ----------- | ----------------------------------------------------- |
+| Backlog     | Công việc được ghi nhận nhưng chưa sẵn sàng thực hiện |
+| Ready       | Yêu cầu đã rõ ràng và có thể bắt đầu                  |
+| In Progress | Thành viên đang thực hiện                             |
+| In Review   | Đã hoàn thành phần triển khai và đang chờ PR review   |
+| Done        | PR đã merge và công việc đáp ứng Acceptance Criteria  |
 
 ### Quy trình thực hiện một Jira Issue
 
@@ -110,14 +110,14 @@ chore(deps): update prettier SFP-40
 
 Scope đề xuất:
 
-| Scope | Phạm vi |
-| --- | --- |
-| `web` | Frontend |
-| `api` | Backend |
-| `shared` | Code dùng chung |
-| `repo` | Cấu hình repository |
-| `deps` | Dependencies |
-| `ci` | CI workflows |
+| Scope    | Phạm vi             |
+| -------- | ------------------- |
+| `web`    | Frontend            |
+| `api`    | Backend             |
+| `shared` | Code dùng chung     |
+| `repo`   | Cấu hình repository |
+| `deps`   | Dependencies        |
+| `ci`     | CI workflows        |
 
 Mỗi commit nên tập trung vào một thay đổi có ý nghĩa.
 

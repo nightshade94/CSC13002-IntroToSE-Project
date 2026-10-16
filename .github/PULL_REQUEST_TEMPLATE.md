@@ -1,28 +1,28 @@
-## Tóm tắt
+## Summary
 
-<!-- Thay đổi gì và vì sao? Có thể mở Draft PR khi chưa hoàn thành. -->
+<!-- What has changed and why? You can open a Draft PR if the work is not yet complete. -->
 
-## Issue liên quan
+## Related Issue
 
 Closes #
 
-## Loại thay đổi
+## Type of Change
 
 - [ ] Feature
 - [ ] Bug fix
 - [ ] Documentation
 - [ ] Test / Chore
 
-## Kiểm chứng
+## Verification
 
-<!-- Ghi lệnh đã chạy và kết quả; nếu chưa chạy, nêu lý do. -->
+<!-- List the commands executed and their results. If any checks were not run, explain why. -->
 
-## Ảnh minh họa (nếu có)
+## Screenshots (if applicable)
 
 ## Checklist
 
-- [ ] Đã tự review thay đổi
-- [ ] `pnpm format:check` và các kiểm tra hiện có liên quan đã pass
-- [ ] Đã thêm hoặc cập nhật test khi cần và khi có bộ test
-- [ ] Đã cập nhật tài liệu khi cần
-- [ ] Không chứa secrets hoặc credentials
+- [ ] I have reviewed my own changes.
+- [ ] `pnpm format:check` and all other relevant available checks have passed.
+- [ ] I have added or updated tests where necessary and where a testing framework is available.
+- [ ] I have updated the documentation where necessary.
+- [ ] No secrets or credentials are included.

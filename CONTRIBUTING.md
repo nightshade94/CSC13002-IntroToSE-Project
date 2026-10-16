@@ -1,79 +1,79 @@
-# Hướng dẫn đóng góp
+# Contribution Guidelines
 
-Tài liệu này hướng dẫn các thành viên tham gia theo quy trình cộng tác thống nhất.
+This document provides guidelines for team members to follow a consistent collaboration workflow.
 
-Nhóm sử dụng:
+The team uses:
 
-- **Jira:** Quản lý công việc, phân công nhiệm vụ và theo dõi tiến độ.
-- **GitHub:** Quản lý mã nguồn, branches, Pull Requests và Code Review.
-- **GitHub Actions:** Kiểm tra tự động khi tạo hoặc cập nhật Pull Request.
+- **Jira:** Task management, assignment, and progress tracking.
+- **GitHub:** Source code management, branches, Pull Requests, and Code Reviews.
+- **GitHub Actions:** Automated checks when Pull Requests are created or updated.
 
-Mục tiêu là duy trì quy trình rõ ràng, dễ thực hiện và phù hợp với nhóm mới tiếp cận Software Engineering.
+The goal is to maintain a clear, straightforward workflow suitable for a team new to Software Engineering.
 
-## 1. Bắt đầu
+## 1. Getting Started
 
-1. Cài đặt công cụ theo hướng dẫn trong [README](README.md).
-2. Chạy `pnpm install` để cài đặt dependencies.
-3. Chạy `pnpm format:check` để kiểm tra định dạng.
-4. Truy cập Jira Project của nhóm để xem danh sách công việc.
-5. Chọn hoặc nhận một Jira Issue đã có yêu cầu và tiêu chí hoàn thành rõ ràng.
+1. Install the required tools by following the instructions in the [README](README.md).
+2. Run `pnpm install` to install dependencies.
+3. Run `pnpm format:check` to verify formatting.
+4. Open the team's Jira Project to view available tasks.
+5. Select or take ownership of a Jira Issue with clearly defined requirements and acceptance criteria.
 
-Mỗi Jira Issue nên có:
+Each Jira Issue should include:
 
-- **Summary:** Tên công việc ngắn gọn.
-- **Description:** Mô tả mục tiêu và phạm vi.
-- **Issue Type:** Story, Task hoặc Bug.
-- **Priority:** Mức độ ưu tiên.
-- **Assignee:** Một người chịu trách nhiệm chính.
-- **Acceptance Criteria:** Các điều kiện để xác nhận hoàn thành.
+- **Summary:** A concise task title.
+- **Description:** A description of the objectives and scope.
+- **Issue Type:** Story, Task, or Bug.
+- **Priority:** The task's priority level.
+- **Assignee:** One person primarily responsible for the task.
+- **Acceptance Criteria:** Conditions that must be met for the task to be considered complete.
 
-Thành viên có thể phối hợp thực hiện nhưng cần có một người chịu trách nhiệm theo dõi tiến độ chính.
+Multiple team members may collaborate on a task, but one person should remain primarily responsible for tracking its progress.
 
-Trước những thay đổi lớn về kiến trúc, API hoặc công nghệ, hãy trao đổi trong Jira Issue hoặc với nhóm.
+Before making significant changes to the architecture, APIs, or technology stack, discuss them in the relevant Jira Issue or with the team.
 
 ## 2. Jira Workflow
 
-Nhóm sử dụng Kanban Board trên Jira với các trạng thái:
+The team uses a Jira Kanban Board with the following statuses:
 
 ```text
 Backlog → Ready → In Progress → In Review → Done
 ```
 
-| Trạng thái | Ý nghĩa |
-| --- | --- |
-| Backlog | Công việc được ghi nhận nhưng chưa sẵn sàng thực hiện |
-| Ready | Yêu cầu đã rõ ràng và có thể bắt đầu |
-| In Progress | Thành viên đang thực hiện |
-| In Review | Đã hoàn thành phần triển khai và đang chờ PR review |
-| Done | PR đã merge và công việc đáp ứng Acceptance Criteria |
+| Status      | Description                                                    |
+| ----------- | -------------------------------------------------------------- |
+| Backlog     | Tasks have been recorded but are not yet ready for development |
+| Ready       | Requirements are clear, and work can begin                     |
+| In Progress | A team member is actively working on the task                  |
+| In Review   | Implementation is complete, and the PR is awaiting review      |
+| Done        | The PR has been merged, and the Acceptance Criteria are met    |
 
-### Quy trình thực hiện một Jira Issue
+### Jira Issue Workflow
 
-1. Chọn Issue ở trạng thái `Ready`.
-2. Gán Assignee và chuyển sang `In Progress`.
-3. Tạo Git branch gắn với Jira Issue Key.
-4. Thực hiện thay đổi và commit code.
-5. Mở Pull Request trên GitHub.
-6. Chuyển Issue sang `In Review` khi PR đã sẵn sàng review.
-7. Sau khi PR được approve, CI pass và merge, chuyển Jira Issue sang `Done`.
+1. Select an Issue with the `Ready` status.
+2. Assign an Assignee and move the Issue to `In Progress`.
+3. Create a Git branch associated with the Jira Issue Key.
+4. Implement the changes and commit the code.
+5. Open a Pull Request on GitHub.
+6. Move the Issue to `In Review` when the PR is ready for review.
+7. Once the PR is approved, CI checks have passed, and the PR has been merged, move the Jira Issue to `Done`.
 
-Nếu Jira đã được tích hợp với GitHub, các thông tin branch, commit và PR có thể hiển thị trong phần Development của Jira Issue.
+If Jira is integrated with GitHub, branch, commit, and PR information may appear in the Development section of the Jira Issue.
 
-Việc tự động chuyển trạng thái Jira sau khi merge chỉ hoạt động khi nhóm đã cấu hình automation tương ứng. Nếu chưa có, Assignee cập nhật thủ công.
+Automatic Jira status transitions after merging only work if the team has configured the corresponding automation. Otherwise, the Assignee must update the status manually.
 
-## 3. Nhánh và Commit
+## 3. Branches and Commits
 
 ### Branch Naming
 
-Tạo branch từ `main` mới nhất.
+Create branches from the latest `main` branch.
 
-Sử dụng quy tắc:
+Use the following naming convention:
 
 ```text
 <type>/<JIRA-KEY>-<description>
 ```
 
-Ví dụ, với Jira Project Key là `SFP`:
+For example, with `SFP` as the Jira Project Key:
 
 ```text
 feat/SFP-12-fridge-inventory
@@ -82,23 +82,23 @@ docs/SFP-25-update-readme
 chore/SFP-40-update-dependencies
 ```
 
-Quy ước:
+Conventions:
 
-- `type` viết thường: `feat`, `fix`, `docs`, `test`, `refactor`, `chore`, `ci`.
-- Jira Issue Key giữ nguyên định dạng, ví dụ `SFP-12`.
-- Phần mô tả dùng lowercase kebab-case.
-- Một branch nên tập trung vào một Jira Issue chính.
-- Không push code trực tiếp vào `main`.
+- Use lowercase for `type`: `feat`, `fix`, `docs`, `test`, `refactor`, `chore`, or `ci`.
+- Preserve the Jira Issue Key format, such as `SFP-12`.
+- Use lowercase kebab-case for the description.
+- Each branch should focus on one primary Jira Issue.
+- Do not push code directly to `main`.
 
 ### Commit Convention
 
-Sử dụng **Conventional Commits với scope**:
+Use **Conventional Commits with a scope**:
 
 ```text
 <type>(<scope>): <description>
 ```
 
-Ví dụ:
+Examples:
 
 ```text
 feat(web): add fridge inventory page SFP-12
@@ -108,30 +108,30 @@ docs(repo): update contribution guide SFP-25
 chore(deps): update prettier SFP-40
 ```
 
-Scope đề xuất:
+Suggested scopes:
 
-| Scope | Phạm vi |
-| --- | --- |
-| `web` | Frontend |
-| `api` | Backend |
-| `shared` | Code dùng chung |
-| `repo` | Cấu hình repository |
-| `deps` | Dependencies |
-| `ci` | CI workflows |
+| Scope    | Area                     |
+| -------- | ------------------------ |
+| `web`    | Frontend                 |
+| `api`    | Backend                  |
+| `shared` | Shared code              |
+| `repo`   | Repository configuration |
+| `deps`   | Dependencies             |
+| `ci`     | CI workflows             |
 
-Mỗi commit nên tập trung vào một thay đổi có ý nghĩa.
+Each commit should focus on a single meaningful change.
 
-Hiện tại nhóm chưa bắt buộc kiểm tra tự động branch naming hoặc commit message.
+The team does not currently enforce automated validation of branch names or commit messages.
 
-Xem thêm tại [Git Workflow](docs/development/git-workflow.md).
+For more details, see [Git Workflow](docs/development/git-workflow.md).
 
-## 4. Pull Request và Code Review
+## 4. Pull Requests and Code Reviews
 
-Sau khi hoàn thiện công việc, tạo Pull Request vào nhánh `main`.
+Once the work is complete, open a Pull Request targeting the `main` branch.
 
 ### PR Title
 
-Sử dụng Conventional Commits và Jira Issue Key:
+Use Conventional Commits and include the Jira Issue Key:
 
 ```text
 feat(web): implement fridge inventory page [SFP-12]
@@ -139,95 +139,95 @@ feat(web): implement fridge inventory page [SFP-12]
 
 ### PR Description
 
-Sử dụng Pull Request Template có sẵn trong repository.
+Use the Pull Request Template provided in the repository.
 
-PR cần thể hiện:
+Each PR should include:
 
-- Mục tiêu và những thay đổi chính.
-- Jira Issue liên quan, ví dụ `SFP-12` kèm đường dẫn Jira.
-- Cách kiểm thử thay đổi.
-- Screenshot nếu thay đổi giao diện.
-- Những điểm reviewer cần chú ý.
+- The objective and a summary of the main changes.
+- The related Jira Issue, such as `SFP-12`, including a link to the Jira Issue.
+- Instructions for testing or verifying the changes.
+- Screenshots for user interface changes.
+- Any areas requiring special attention from reviewers.
 
-**Lưu ý:** Không sử dụng `Closes #12` để liên kết Jira Issue. Cú pháp này dành cho GitHub Issues.
+**Note:** Do not use `Closes #12` to link a Jira Issue. This syntax is intended for GitHub Issues.
 
-Jira Issue Key trong branch, commit và PR sẽ hỗ trợ liên kết với Jira khi tích hợp GitHub đã được cấu hình.
+Including the Jira Issue Key in branch names, commit messages, and PRs helps establish links with Jira when the GitHub integration is configured.
 
-### Trước khi yêu cầu Review
+### Before Requesting a Review
 
-- Tự kiểm tra các thay đổi bằng `git diff`.
-- Không đưa thay đổi ngoài phạm vi công việc vào PR.
-- Không commit credentials, API keys hoặc secrets.
-- Chạy `pnpm format:check`.
-- Nếu cần sửa định dạng, chạy `pnpm format` và kiểm tra lại diff.
-- Khi ứng dụng đã được khởi tạo, chạy thêm lint, typecheck, test và build theo cấu hình thực tế.
-- Bổ sung hoặc cập nhật test khi thay đổi business logic, API behavior hoặc sửa bug.
+- Review your changes using `git diff`.
+- Avoid including unrelated changes in the PR.
+- Do not commit credentials, API keys, or secrets.
+- Run `pnpm format:check`.
+- If formatting changes are needed, run `pnpm format` and review the diff again.
+- Once the applications have been initialized, also run lint, typecheck, test, and build commands according to the actual configuration.
+- Add or update tests when modifying business logic, API behavior, or fixing bugs.
 
-Không bắt buộc bổ sung test mới cho PR chỉ thay đổi tài liệu.
+Documentation-only PRs do not require new tests.
 
-Có thể mở **Draft Pull Request** để nhận góp ý sớm. Chỉ chuyển sang `Ready for review` khi thay đổi đã sẵn sàng để đánh giá.
+You may open a **Draft Pull Request** to receive early feedback. Mark it as `Ready for review` only when the changes are ready to be evaluated.
 
 ### Code Review
 
-PR thông thường nên có ít nhất **1 approval từ thành viên khác**.
+Regular PRs should receive at least **1 approval from another team member**.
 
-Các thay đổi quan trọng nên có **2 approvals khi khả thi**, bao gồm:
+Significant changes should receive **2 approvals whenever feasible**, including changes involving:
 
-- Authentication và Authorization.
+- Authentication and Authorization.
 - Database schema.
 - Shared API contracts.
 - CI configuration.
 - Security-sensitive changes.
 
-Reviewer nên tập trung vào:
+Reviewers should focus on:
 
-- Tính đúng đắn của chức năng.
-- Mức độ đáp ứng Acceptance Criteria.
-- Khả năng đọc hiểu và bảo trì.
-- Error handling và input validation.
-- Chất lượng kiểm thử.
-- Tính nhất quán với kiến trúc hiện tại.
+- Functional correctness.
+- Compliance with Acceptance Criteria.
+- Code readability and maintainability.
+- Error handling and input validation.
+- Test quality.
+- Consistency with the current architecture.
 
-Đưa ra góp ý rõ ràng, lịch sự và phân biệt lỗi cần sửa với đề xuất cải thiện không bắt buộc.
+Provide clear and respectful feedback, distinguishing issues that must be fixed from optional improvement suggestions.
 
-## 5. Merge và hoàn thành công việc
+## 5. Merging and Completing Tasks
 
-Tác giả PR có thể thực hiện **Squash and merge** khi:
+The PR author may perform a **Squash and merge** when:
 
-- PR đã được review theo quy định.
-- Các CI checks bắt buộc đều pass.
-- Các review conversations cần giải quyết đã được xử lý.
-- Không còn vấn đề quan trọng chưa thống nhất.
+- The PR has been reviewed according to team guidelines.
+- All required CI checks have passed.
+- All review conversations requiring resolution have been addressed.
+- No significant unresolved issues remain.
 
-Tên Squash Commit nên tuân thủ Conventional Commits và chứa Jira Issue Key.
+The Squash Commit message should follow Conventional Commits and include the Jira Issue Key.
 
-Sau khi merge:
+After merging:
 
-1. Xóa feature branch trên GitHub.
-2. Kiểm tra Jira Issue và liên kết PR.
-3. Xác nhận Acceptance Criteria đã hoàn thành.
-4. Chuyển Jira Issue sang `Done` nếu chưa có automation.
-5. Cập nhật tài liệu liên quan nếu cần.
+1. Delete the feature branch on GitHub.
+2. Check the Jira Issue and its associated PR.
+3. Confirm that all Acceptance Criteria have been met.
+4. Move the Jira Issue to `Done` if no automation is configured.
+5. Update any relevant documentation if necessary.
 
-Không push trực tiếp vào `main`.
+Do not push directly to `main`.
 
-Các thiết lập Branch Protection và Merge Strategy được maintainer quản lý theo [hướng dẫn GitHub](docs/development/github-setup.md).
+Branch Protection and Merge Strategy settings are managed by maintainers according to the [GitHub Setup Guide](docs/development/github-setup.md).
 
-## 6. Ví dụ quy trình hoàn chỉnh
+## 6. Complete Workflow Example
 
-Giả sử nhóm cần triển khai giao diện quản lý thực phẩm.
+Suppose the team needs to implement the food inventory interface.
 
-**Bước 1 — Jira**
+**Step 1 — Jira**
 
-Tạo hoặc nhận Issue:
+Create or take ownership of the following Issue:
 
 ```text
 SFP-12: Implement fridge inventory page
 ```
 
-Chuyển Issue sang `In Progress`.
+Move the Issue to `In Progress`.
 
-**Bước 2 — Git**
+**Step 2 — Git**
 
 ```bash
 git switch main
@@ -235,9 +235,9 @@ git pull origin main
 git switch -c feat/SFP-12-fridge-inventory
 ```
 
-**Bước 3 — Development**
+**Step 3 — Development**
 
-Triển khai chức năng, thực hiện kiểm tra cần thiết và commit:
+Implement the feature, perform the necessary checks, and commit the changes:
 
 ```bash
 git add .
@@ -245,36 +245,36 @@ git commit -m "feat(web): add fridge inventory page SFP-12"
 git push -u origin feat/SFP-12-fridge-inventory
 ```
 
-**Bước 4 — Pull Request**
+**Step 4 — Pull Request**
 
-Tạo PR:
+Open a PR with the following title:
 
 ```text
 feat(web): implement fridge inventory page [SFP-12]
 ```
 
-Thêm liên kết đến Jira Issue trong mô tả PR.
+Include a link to the Jira Issue in the PR description.
 
-Chuyển Issue sang `In Review` khi PR sẵn sàng review.
+Move the Issue to `In Review` when the PR is ready for review.
 
-**Bước 5 — Review & Merge**
+**Step 5 — Review & Merge**
 
-Sau khi được approval và CI pass, thực hiện Squash Merge.
+Once the PR has received the required approvals and CI checks have passed, perform a Squash Merge.
 
-**Bước 6 — Jira**
+**Step 6 — Jira**
 
-Kiểm tra chức năng đã đáp ứng Acceptance Criteria và chuyển Issue sang `Done`.
+Verify that the implementation meets the Acceptance Criteria and move the Issue to `Done`.
 
 ---
 
-## 7. Nguyên tắc làm việc nhóm
+## 7. Team Collaboration Principles
 
-- Mỗi công việc nên được theo dõi bằng Jira Issue.
-- Mỗi Issue có một người chịu trách nhiệm chính.
-- Chủ động trao đổi khi gặp khó khăn hoặc có thay đổi về phạm vi.
-- Ưu tiên Pull Request nhỏ, dễ review.
-- Không merge code chưa đáp ứng các kiểm tra bắt buộc.
-- Không yêu cầu quy trình phức tạp hơn mức cần thiết.
-- Tôn trọng phản hồi của các thành viên và cùng chịu trách nhiệm về chất lượng sản phẩm.
+- Each task should be tracked through a Jira Issue.
+- Each Issue should have one primary Assignee.
+- Communicate proactively when encountering difficulties or changes in scope.
+- Prefer small, focused Pull Requests that are easy to review.
+- Do not merge code that has not passed the required checks.
+- Avoid introducing unnecessary process complexity.
+- Respect feedback from team members and share responsibility for product quality.
 
-**Mục tiêu:** Xây dựng thói quen làm việc nhóm có tổ chức, có khả năng truy vết và kiểm soát chất lượng, đồng thời duy trì quy trình đơn giản để mọi thành viên đều có thể tham gia.
+**Goal:** Establish organized, traceable, and quality-focused team collaboration practices while keeping the workflow simple enough for every team member to participate effectively.

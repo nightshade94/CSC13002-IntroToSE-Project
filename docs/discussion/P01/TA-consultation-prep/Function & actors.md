@@ -1,27 +1,35 @@
 # Functional Groups and Actors
 
+**Performed by:** Ngô Huỳnh Thắm · **Reviewed by:** Cao Tiến Thiên · **Edited by:** [None]
+
 ## Project Summary
 
-The proposed application is a web or mobile fridge-management system that helps people manage household food, reduce food waste, find recipes, and plan meals. It also includes a recipe-sharing community and administrative functions.
+**Performed by:** Ngô Huỳnh Thắm · **Reviewed by:** Cao Tiến Thiên · **Edited by:** [None]
+
+The proposed application is a responsive web-based fridge-management system that helps people manage household food, reduce food waste, find recipes, and plan meals. It also includes a recipe-sharing community and administrative functions.
 
 ## Functional Groups
 
-The proposal contains **10 functional groups**, within the teacher's required range of 8 to 10. The AI groups provide practical value by helping users choose recipes that use their available food and organize meals with nutritional information.
+**Performed by:** Ngô Huỳnh Thắm · **Reviewed by:** Cao Tiến Thiên · **Edited by:** [None]
 
-| #   | Functional group                | Main capabilities                                                                                                                                 | Primary actor(s)                                  | AI feature |
-| --- | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- | ---------- |
-| 1   | Authentication                  | Sign up, log in, and log out                                                                                                                      | Normal user; community participant; administrator | No         |
-| 2   | Profile management              | Edit profile information, change password or avatar, and view personal activity statistics                                                        | Normal user; community participant; administrator | No         |
-| 3   | Household management            | Invite or add household members, remove members, and manage member roles                                                                          | Household user                                    | No         |
-| 4   | Food inventory management       | Add food by scanning a bill or image, or by manual input; record quantity and estimated expiration date; deduct food manually or through a recipe | Household user                                    | No         |
-| 5   | Expiration and stock monitoring | Identify soon-to-expire and low-stock food; show related alerts and statistics                                                                    | Household user                                    | No         |
-| 6   | Recipe catalog and search       | Browse a catalog of more than 200 available recipes and search for recipes, including recipes collected from short-video platforms                | Normal user; community participant                | No         |
-| 7   | Recipe-sharing community        | Post, edit, or delete one's own recipes and comment on other users' recipes                                                                       | Community participant                             | No         |
-| 8   | AI recipe recommendations       | Match existing recipes to food in the user's fridge and prioritize recipes that use food nearing its estimated expiration date                    | Household user                                    | **Yes**    |
-| 9   | AI meal planning                | Create weekly or monthly food plans with nutritional details                                                                                      | Household user                                    | **Yes**    |
-| 10  | Administration                  | Manage user accounts and view statistics or insights about user activities                                                                        | Administrator                                     | No         |
+The proposal contains **10 functional groups**, within the teacher's required range of 8 to 10. The AI-enabled groups help users enter purchased food faster, choose recipes that use food nearing expiration, and organize meals with nutritional information.
+
+| #   | Functional group                | Main capabilities                                                                                                                                                                    | Primary actor(s)                                  | AI feature |
+| --- | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------- | ---------- |
+| 1   | Authentication                  | Sign up, log in, and log out                                                                                                                                                         | Normal user; community participant; administrator | No         |
+| 2   | Profile management              | Edit profile information, change password or avatar, and view personal activity statistics                                                                                           | Normal user; community participant; administrator | No         |
+| 3   | Household management            | Invite or add household members, remove members, and manage member roles                                                                                                             | Household user                                    | No         |
+| 4   | Food inventory management       | Use AI OCR on bills and image recognition on food photos to identify ingredients and suggest quantities and estimated expiration dates; also support manual entry and food deduction | Household user                                    | **Yes**    |
+| 5   | Expiration and stock monitoring | Identify soon-to-expire and low-stock food; show related alerts and statistics                                                                                                       | Household user                                    | No         |
+| 6   | Recipe catalog and search       | Browse a catalog of more than 200 available recipes and search for recipes, including recipes collected from short-video platforms                                                   | Normal user; community participant                | No         |
+| 7   | Recipe-sharing community        | Post, edit, or delete one's own recipes and comment on other users' recipes                                                                                                          | Community participant                             | No         |
+| 8   | AI recipe recommendations       | Match existing recipes to food in the user's fridge and prioritize recipes that use food nearing its estimated expiration date                                                       | Household user                                    | **Yes**    |
+| 9   | AI meal planning                | Create weekly or monthly food plans with nutritional details                                                                                                                         | Household user                                    | **Yes**    |
+| 10  | Administration                  | Manage user accounts and view statistics or insights about user activities                                                                                                           | Administrator                                     | No         |
 
 ## Functional Group Details
+
+**Performed by:** Ngô Huỳnh Thắm · **Reviewed by:** Cao Tiến Thiên · **Edited by:** [None]
 
 ### 1. Authentication
 
@@ -37,7 +45,7 @@ Household management lets users invite or add members, remove members, and assig
 
 ### 4. Food Inventory Management
 
-Food inventory management lets users add food by scanning a bill or image, or by entering it manually, and record its quantity and estimated expiration date. Users can deduct food manually or through a recipe, helping them keep the fridge inventory useful and up to date.
+AI-assisted food entry uses OCR to read bills and image recognition to identify food in photos, then suggests a quantity and estimated expiration date for each identified item. Users can also enter food manually or deduct it manually or through recipes; automating initial entry reduces typing and helps them build an inventory faster.
 
 ### 5. Expiration and Stock Monitoring
 
@@ -65,6 +73,8 @@ Administration lets authorized administrators manage user accounts and review st
 
 ## Actors
 
+**Performed by:** Ngô Huỳnh Thắm · **Reviewed by:** Cao Tiến Thiên · **Edited by:** [None]
+
 ### Normal User / Household User
 
 A registered user who manages food in a household fridge. Depending on their household role, they can manage household members and use inventory, expiration monitoring, recipe recommendations, and meal planning.
@@ -76,11 +86,3 @@ A registered user who uses the recipe-sharing community to search for recipes, p
 ### Administrator
 
 A user with administrative permissions who manages user accounts and reviews user activity statistics and insights.
-
-## Discussion Notes
-
-- The same normal user account may act as a household user and a community participant.
-- The estimated expiration date is a prediction; the proposal should clarify how users can interpret it.
-- The recipe catalog's data sources and the method for collecting recipes from short-video platforms need to be decided.
-- The specific permissions included in household roles and administrator access need to be defined.
-- The AI aspect of recipe recommendations and meal planning should be described in the proposal in terms of how it uses the user's food and nutritional details to produce useful results.

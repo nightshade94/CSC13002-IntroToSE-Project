@@ -1,1 +1,3 @@
+**Performed by:** Nguyễn Cao Thông · **Reviewed by:** None yet · **Edited by:** [None]
+
 The project is a proposed smart food management web app for individuals and households. Users would be able to keep a shared inventory of food at home, including item quantities, storage locations, and estimated expiration dates. The app would help them notice which ingredients should be used soon, suggest recipes based on what they have available, and organize meal plans around those ingredients. The goal is to make food easier to manage, reduce spoilage and waste, and save time spent tracking groceries or deciding what to cook. AI-powered suggestions are part of the planned experience; community features and business integrations are ideas for future exploration.

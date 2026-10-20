@@ -1,14 +1,10 @@
 # Team Contract
 
-**Performed by:** Nguyễn Cao Thông · **Reviewed by:** None yet · **Edited by:** [None]
-
-**Draft status:** Initial draft · **Date:** 16 October 2026 · **Reviewed by:** None yet · **Agreed by:** None yet
-
-This initial draft proposes how the **5-member Group 7 (ID 7)** will work together on the Introduction to Software Engineering project.
+**Performed by:** Nguyễn Cao Thông · **Reviewed by:** Ngô Huỳnh Thắm · **Edited by:** Ngô Huỳnh Thắm
 
 ## Team Information
 
-**Performed by:** Nguyễn Cao Thông · **Reviewed by:** None yet · **Edited by:** [None]
+**Performed by:** Nguyễn Cao Thông · **Reviewed by:** Ngô Huỳnh Thắm · **Edited by:** None
 
 **Team size:** 5 members
 
@@ -22,23 +18,23 @@ This initial draft proposes how the **5-member Group 7 (ID 7)** will work togeth
 
 ## Team Roles and Responsibilities
 
-**Performed by:** Nguyễn Cao Thông · **Reviewed by:** None yet · **Edited by:** [None]
+**Performed by:** Nguyễn Cao Thông · **Reviewed by:** Ngô Huỳnh Thắm · **Edited by:** None
 
 Every member will act as a full-stack engineer and contribute to implementation, testing, documentation, and review. All members will participate in the UI/UX design phase; the design lead coordinates that work and documents decisions. Lead roles set direction and coordinate work in their area; they do not make that area the sole responsibility of one person.
 
-| Lead role                      | Assigned member  | Primary responsibilities                                                                                                                                                                  |
-| ------------------------------ | ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Project Manager (PM)           | Nguyễn Cao Thông | Schedule and facilitate sprint meetings, keep the team aware of milestones and blockers, and help track decisions and follow-up actions.                                                  |
-| Backend Lead                   | Dư Hoài Phúc     | Coordinate backend design and implementation, API and integration points, and related technical risks; raise dependencies early.                                                          |
-| Frontend and UI/UX Design Lead | Cao Tiến Thiên   | Coordinate user flows, interface and interaction design, and frontend implementation; keep design decisions documented and reviewable.                                                    |
-| Testing and Documentation Lead | Ngô Huỳnh Thắm   | Coordinate test planning and quality checks, organize project documentation, and help prepare Markdown and PDF deliverables.                                                              |
-| Research, Requirements         | Phan Tuấn Phong  | Coordinate user and competitor research and requirements documentation; check that requirements are clear and traceable; help implement development tasks as backup capacity when needed. |
+| Lead role                      | Assigned member  | Primary responsibilities                                                                                                                 |
+| ------------------------------ | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| Project Manager (PM)           | Nguyễn Cao Thông | Schedule and facilitate sprint meetings, keep the team aware of milestones and blockers, and help track decisions and follow-up actions. |
+| Backend Lead                   | Dư Hoài Phúc     | Coordinate backend design and implementation, API and integration points, and related technical risks; raise dependencies early.         |
+| Frontend and UI/UX Design Lead | Cao Tiến Thiên   | Coordinate user flows, interface and interaction design, and frontend implementation; keep design decisions documented and reviewable.   |
+| Testing and Documentation Lead | Ngô Huỳnh Thắm   | Coordinate test planning and quality checks, organize project documentation, and help prepare Markdown and PDF deliverables.             |
+| Research, Requirements         | Phan Tuấn Phong  | Coordinate user and competitor research and requirements documentation; check that requirements are clear and traceable.                 |
 
 These five roles combine the team’s current responsibilities. Every member remains responsible for assigned tasks and will contribute outside their lead area when needed. Phong’s backup-development responsibility supplements the research and requirements role; it does not replace shared implementation responsibility.
 
 ## Communication Plan
 
-**Performed by:** Nguyễn Cao Thông · **Reviewed by:** None yet · **Edited by:** [None]
+**Performed by:** Nguyễn Cao Thông · **Reviewed by:** Ngô Huỳnh Thắm · **Edited by:** Ngô Huỳnh Thắm
 
 - **Team discussion channel:** Messenger. Members will check the team chat regularly during working times and keep notifications enabled for direct mentions.
 - **Class announcements and assignment submission:** Check the Moodle and Discord regularly for class announcements, discussions, and questions. Submit assignments through Moodle.
@@ -50,9 +46,9 @@ These five roles combine the team’s current responsibilities. Every member rem
 
 ## Work Schedule and Deadlines
 
-**Performed by:** Nguyễn Cao Thông · **Reviewed by:** None yet · **Edited by:** [None]
+**Performed by:** Nguyễn Cao Thông · **Reviewed by:** Ngô Huỳnh Thắm · **Edited by:** Ngô Huỳnh Thắm
 
-Each project assignment is one sprint of approximately 2–3 weeks. Every sprint includes exactly one Sprint Planning meeting, two Scrum meetings spread across the sprint, and one Sprint Review meeting. The team will aim to keep recurring Scrum dates fixed across sprints. Meeting dates and the expected course deadline will be recorded in Jira at Sprint Planning.
+Each project assignment is one sprint of approximately 2–3 weeks. Every sprint includes exactly one Sprint Planning meeting, two Scrum meetings spread across the sprint, and one Sprint Review meeting. The team will aim to keep recurring Scrum dates fixed across sprints. Expected course deadline will be recorded in Jira at Sprint Planning.
 
 When schedules allow, the team may meet offline on Tuesday morning for one of the two scheduled Scrum meetings or a shared work session. The team will confirm the time and place in the team chat. This optional session will not add a third Scrum meeting to the sprint.
 
@@ -64,7 +60,7 @@ When schedules allow, the team may meet offline on Tuesday morning for one of th
 | Optional offline Scrum/work session | Tuesday morning when schedules allow; may coincide with one of the two Scrum meetings; confirm time and place in the team chat |
 | Sprint Review                       | Near the end of each sprint; date and time agreed at planning                                                                  |
 | Course submission deadline          | [date and time, when announced]                                                                                                |
-| Internal completion deadline        | At least 48 hours before the course deadline, unless the team records a different buffer and reason                            |
+| Internal completion deadline        | At least 24 hours before the course deadline, unless the team records a different buffer and reason                            |
 
 At Sprint Planning, each task will have a clear outcome, exactly one owner, creation and assignment dates, an agreed target date, and a completion date recorded when finished. Tasks must be created and assigned in Jira before work begins; members must not create, assign, and complete a task retroactively. Dependencies and review time should be included in estimates.
 
@@ -72,7 +68,7 @@ If a deadline is at risk, the task owner will tell the team as soon as possible,
 
 ## Code and Documentation Standards
 
-**Performed by:** Nguyễn Cao Thông, Dư Hoài Phúc · **Reviewed by:** None yet · **Edited by:** [None]
+**Performed by:** Nguyễn Cao Thông · **Reviewed by:** Ngô Huỳnh Thắm, Dư Hoài Phúc · **Edited by:** Dư Hoài Phúc
 
 - Use current project tooling and record changes in the repository. The setup uses Node.js 24 LTS, pnpm 10.32.1, Prettier, and GitHub Actions; confirm application architecture and testing tools together before implementation.
 - Work in small, reviewable changes: create a feature or fix branch, implement and test, open a Pull Request, complete CI checks and code review, then merge to main. Link the relevant Jira task from the Pull Request.
@@ -83,12 +79,10 @@ If a deadline is at risk, the task owner will tell the team as soon as possible,
 - Write reports and project documentation in English Markdown and store them with the code. Use Mermaid for diagrams where practical. For each report or document section, put the Performed by / Reviewed by / Edited by attribution on the first line immediately after that section heading.
 - Preserve the original Markdown files and prepare PDF versions for course submissions.
 - Never commit API keys, passwords, tokens, or other credentials. If external services require configuration, use local environment settings and provide a safe .env.example with sample values.
-- From PA2 onward, use Spec Kit for the specification-driven development workflow. Each member must register for a free educational account on an AI coding platform.
-- For PA1, submit the English Markdown and corresponding PDF files, include a Git log screenshot or export, and package the submission in a folder named PA1-Group7 before zipping it. Use Mermaid for diagrams where possible. Record the performer, reviewer, and editor on the first line after each document section heading; replace pending attribution markers with actual names before submission.
 
 ## Accountability and Performance
 
-**Performed by:** Nguyễn Cao Thông · **Reviewed by:** None yet · **Edited by:** [None]
+**Performed by:** Nguyễn Cao Thông · **Reviewed by:** Ngô Huỳnh Thắm · **Edited by:** None
 
 Contribution will be assessed through assigned work completed, quality and review readiness, timely communication about progress or blockers, participation in meetings and reviews, and support for shared project goals. Task history, code and document reviews, meeting notes, and agreed deliverables will provide a record of contributions. Lines of code or hours alone will not be treated as a measure of contribution.
 
@@ -103,7 +97,7 @@ Repeatedly missing agreed responsibilities without communicating may result in w
 
 ## Decision-Making Process
 
-**Performed by:** Nguyễn Cao Thông · **Reviewed by:** None yet · **Edited by:** [None]
+**Performed by:** Nguyễn Cao Thông · **Reviewed by:** Ngô Huỳnh Thắm · **Edited by:** None
 
 The team will first discuss decisions and aim for consensus. Routine decisions within an assigned task may be made by that task owner if they do not conflict with agreed requirements, architecture, or team commitments. The owner will record decisions that affect other work.
 
@@ -111,7 +105,7 @@ For major decisions—such as project scope, requirements, architecture, sprint 
 
 ## Conflict Resolution
 
-**Performed by:** Nguyễn Cao Thông · **Reviewed by:** None yet · **Edited by:** [None]
+**Performed by:** Nguyễn Cao Thông · **Reviewed by:** Ngô Huỳnh Thắm · **Edited by:** None
 
 Team members will address disagreements respectfully and focus on the work and its impact:
 
@@ -125,9 +119,10 @@ Team members will address disagreements respectfully and focus on the work and i
 
 The team will review this contract during each Sprint Review and whenever team membership, availability, tools, or project needs change materially. Any member may propose an update. The team will discuss the proposed change, agree to it using the Decision-Making Process, and record the revision date and summary below. Updates apply after they are shared with all members.
 
-| Revision date | Summary of change                  | Agreed by |
-| ------------- | ---------------------------------- | --------- |
-| 2026-10-16    | Initial draft; pending team review | None yet  |
+| Revision date | Summary of change                  | Agreed by   |
+| ------------- | ---------------------------------- | ----------- |
+| 2026-10-16    | Initial draft; pending team review | All members |
+| 2026-10-20    | Finalize for Project Assignment 1  | All members |
 
 ## Team Agreement
 
@@ -137,10 +132,10 @@ The team will review this contract during each Sprint Review and whenever team m
 
 The expectations below are proposals in this initial draft. They become team commitments only after the members review the contract and record their agreement. Until then, the signature table is intentionally pending.
 
-| Member                          | Signature / confirmation     | Date |
-| ------------------------------- | ---------------------------- | ---- |
-| Nguyễn Cao Thông (group leader) | Pending review and agreement | —    |
-| Ngô Huỳnh Thắm                  | Pending review and agreement | —    |
-| Cao Tiến Thiên                  | Pending review and agreement | —    |
-| Dư Hoài Phúc                    | Pending review and agreement | —    |
-| Phan Tuấn Phong                 | Pending review and agreement | —    |
+| Member                          | Confirmation | Date       |
+| ------------------------------- | ------------ | ---------- |
+| Nguyễn Cao Thông (group leader) | Agreed       | 2026-10-14 |
+| Ngô Huỳnh Thắm                  | Agreed       | 2026-10-14 |
+| Cao Tiến Thiên                  | Agreed       | 2026-10-14 |
+| Dư Hoài Phúc                    | Agreed       | 2026-10-14 |
+| Phan Tuấn Phong                 | Agreed       | 2026-10-14 |

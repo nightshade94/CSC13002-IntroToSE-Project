@@ -38,19 +38,19 @@ Our web app turns the household fridge into a **shared, always up-to-date food i
 
 ```mermaid
 flowchart LR
-    subgraph HU["Household user"]
-        A["Add food<br/>(bill or photo, AI)"] --> B["Track the shared<br/>inventory"]
-        B --> C["Alert: use soon<br/>or low stock"]
-        C --> D["Recommend recipes<br/>and plan meals (AI)"]
-        D --> E["Cook and deduct<br/>used food"]
-        E --> A
-    end
-    subgraph CP["Community participant"]
-        F["Search<br/>recipes"] --> G["Post own<br/>recipe"]
-        G --> H["Comment on<br/>others' recipes"]
-    end
-    E -. "share the dish" .-> G
-    G -. "more recipes to<br/>recommend" .-> D
+subgraph HU["Household user"]
+A["Add food (bill or photo, AI)"] --> B["Track the shared inventory"]
+B --> C["Alert: use soon or low stock"]
+C --> D["Recommend recipes and plan meals (AI)"]
+D --> E["Cook and deduct used food"]
+E --> A
+end
+subgraph CP["Community participant"]
+F["Search recipes"] --> G["Post own recipe"]
+G --> H["Comment on others' recipes"]
+end
+E -. "share the dish" .-> G
+G -. "more recipes to recommend" .-> D
 ```
 
 **Administrators** manage user accounts and review activity statistics to keep the app safe and understand how it is used.
@@ -72,8 +72,11 @@ flowchart LR
 Compared with the apps in our survey (Well-Stockd and SuperCook):
 
 1. **Fast input:** one bill or food photo can add many items, and every AI suggestion is reviewed by the user before it is saved.
+
 2. **Alerts that lead to action:** soon-to-expire food is linked directly to recipes that use it.
+
 3. **Local focus:** the workflow is designed around Vietnamese foods, units, recipes and bill formats. We will check this with real users before claiming it as an advantage.
+
 4. **Household-first:** members share one inventory and meal plan, with roles managed by the household.
 
 ---
@@ -87,9 +90,9 @@ Compared with the apps in our survey (Well-Stockd and SuperCook):
 **Performed by:** Cao Tiến Thiên · **Reviewed by:** None yet · **Edited by:** [None]
 
 | Segment                                       | Characteristics                                                     | Why the app fits                                         | Priority  |
-| --------------------------------------------- | ------------------------------------------------------------------- | -------------------------------------------------------- | :-------: |
-| **Urban families**                            | Parents aged 28–45; weekly supermarket trips; one main meal planner | Largest food volume; need shared planning                |  Primary  |
-| **Students and young workers sharing a flat** | Aged 18–27; tight budget; 2–5 people share one fridge               | Need to know what is at home; cheap meals from leftovers |  Primary  |
+| --------------------------------------------- | ------------------------------------------------------------------- | -------------------------------------------------------- | --------- |
+| **Urban families**                            | Parents aged 28–45; weekly supermarket trips; one main meal planner | Largest food volume; need shared planning                | Primary   |
+| **Students and young workers sharing a flat** | Aged 18–27; tight budget; 2–5 people share one fridge               | Need to know what is at home; cheap meals from leftovers | Primary   |
 | **Busy singles and couples**                  | Shop irregularly; cook a few times a week                           | Forget food easily; benefit most from alerts             | Secondary |
 
 ### 2.2 Actors
@@ -106,12 +109,12 @@ Compared with the apps in our survey (Well-Stockd and SuperCook):
 
 ```mermaid
 flowchart LR
-    H(["Household User"]) --> W["Responsive<br/>web app"]
-    C(["Community Participant"]) --> W
-    A(["Administrator"]) --> W
-    W --> API["Back end<br/>(REST API)"]
-    API --> AI[("AI services")]
-    API --> M[("E-mail service")]
+H(["Household User"]) --> W["Responsive web app"]
+C(["Community Participant"]) --> W
+A(["Administrator"]) --> W
+W --> API["Back end (REST API)"]
+API --> AI[("AI services")]
+API --> M[("E-mail service")]
 ```
 
 ### 2.3 Usage Context
@@ -141,3 +144,79 @@ flowchart LR
 | Languages          | Vietnamese (default) and English                                                                 |
 | Accessibility      | Text contrast ≥ 4.5:1; status shown by colour **and** text; keyboard-navigable forms             |
 | Server side        | Back end planned as Node.js + Express with TypeScript; database and AI provider to be decided    |
+
+## 3. Key Features
+
+**Performed by:** Nguyễn Cao Thông · **Reviewed by:** None · **Edited by:** [None]
+
+### 3.1 Authentication
+
+Users can register, sign in, and sign out. Authentication identifies each user and controls access to their profile and household information.
+
+### 3.2 Profile Management
+
+Users can update their personal information, password, and avatar, and view their activity statistics. This helps them keep their account current and review how they use the app.
+
+### 3.3 Household Management
+
+Users can invite or remove household members and assign roles that control access to shared information. This allows everyone in a household to work from the same food inventory and meal plans.
+
+### 3.4 Food Inventory and Quantity Tracking
+
+Users can record each food item’s quantity, storage location, and estimated expiration date. They can update quantities after shopping, cooking, or discarding food, so the inventory reflects what is available. To save time, OCR (optical character recognition) can read receipts and suggest food entries, while image recognition can identify food in photos. Users review the suggested items, quantities, and estimated expiration dates before saving.
+
+### 3.5 Expiration, Stock Monitoring, and Shopping Recommendations
+
+The app highlights food nearing its estimated expiration date and items running low. It suggests purchases based on low stock and ingredients missing from planned meals. Users can review these suggestions before adding them to a shopping list.
+
+### 3.6 Recipe Catalog and Search
+
+Users can browse and search recipes by name or ingredient. Each recipe lists its required ingredients, helping users find meals that fit what they already have.
+
+### 3.7 Recipe-Sharing Community
+
+Community participants can publish recipes, edit or delete their own posts, and comment on others’ recipes. This gives users more meal ideas and a place to exchange cooking tips.
+
+### 3.8 AI Recipe Recommendations
+
+The app compares recipe ingredients with the household inventory and suggests meals users can make or nearly make. It prioritizes recipes that use food nearing its estimated expiration date and identifies missing ingredients. This helps users choose meals while making better use of available food.
+
+### 3.9 AI Meal Planning
+
+Users can request a weekly or monthly meal plan and adjust the suggested meals. The plan considers available ingredients and shows basic nutritional information where reliable recipe data is available. It helps households prepare meals in advance and identify what they need to buy.
+
+### 3.10 Administration
+
+Administrators can manage user accounts and review platform activity statistics. These tools help them address account issues and monitor how the application is used.
+
+## 4. Key AI-Powered Features
+
+**Performed by:** Nguyễn Cao Thông · **Reviewed by:** None · **Edited by:** [None]
+
+### 4.1 AI-Assisted Food Entry
+
+Users can upload a receipt or food photo instead of entering every item manually. OCR reads receipt text to identify possible food items, while image recognition identifies food in photos. The app suggests quantities and estimated expiration dates, and users review and correct these suggestions before saving them to the household inventory.
+
+```mermaid
+flowchart TD
+A["Upload receipt or food photo"] --> B{"Input type"}
+B -->|Receipt| C["OCR reads receipt text and identifies food items"]
+B -->|Food photo| D["Image recognition identifies food"]
+C --> E["Suggest items, quantities, and expiration dates"]
+D --> E
+E --> F["User reviews and corrects suggestions"]
+F --> G["Save to household inventory"]
+```
+
+### 4.2 Inventory-Aware Recipe Recommendations
+
+The app compares recipe requirements with the household’s recorded food and quantities. It prioritizes recipes that use ingredients nearing their estimated expiration dates, identifies missing ingredients, and explains each suggestion. Users decide which recipe to make; choosing one does not automatically change their inventory or shopping list.
+
+```mermaid
+flowchart TD
+A["Household inventory and quantities"] --> C["Compare with recipe ingredients"]
+B["Recipe catalog"] --> C
+C --> D["Prioritize ingredients nearing expiration"]
+D --> E["Show recipes, reasons, and missing ingredients"]
+E --> F["User chooses a recipe"]
+```

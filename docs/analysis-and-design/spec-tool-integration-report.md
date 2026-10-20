@@ -1,6 +1,6 @@
 ## Proposed OpenSpec Integration
 
-**Performed by:** Dư Hoài Phúc · **Reviewed by:** None yet · **Edited by:** None
+**Performed by:** Dư Hoài Phúc · **Reviewed by:** Ngô Huỳnh Thắm · **Edited by:** None
 
 ### Purpose
 

@@ -6,6 +6,18 @@
 
 The team is considering [OpenSpec](https://github.com/Fission-AI/OpenSpec), a lightweight specification-driven development tool, to make requirements clearer before implementation with AI coding assistants. The goal is to reduce misunderstandings, scope changes, and inconsistencies between expected behavior and delivered features.
 
+### Tool Options and Selection Rationale
+
+To meet the course requirement of identifying and comparing tools before selection, the team considered these approaches:
+
+| Option                                                    | Strength                                                                   | Limitation                                                          |
+| --------------------------------------------------------- | -------------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| **Jira + manually maintained specifications**             | Already familiar; no additional tooling                                    | Specifications and implementation plans require manual coordination |
+| **[GitHub Spec Kit](https://github.com/github/spec-kit)** | Structured, comprehensive spec-driven workflow                             | More process overhead for a small beginner team                     |
+| **[OpenSpec](https://github.com/Fission-AI/OpenSpec)**    | Lightweight, iterative specifications designed for AI-assisted development | Requires an additional workflow and ongoing document maintenance    |
+
+**Preliminary selection: OpenSpec**, because its flexible, change-oriented workflow appears better suited to a five-member student team. This is a proposal based on tool capabilities, not a conclusion from hands-on comparative testing. Final adoption will depend on a small pilot.
+
 ### Integration with the Existing Workflow
 
 OpenSpec would complement—not replace—the team's current tools:

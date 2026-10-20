@@ -1,6 +1,6 @@
 # C - Existing App Survey: Well Stockd, SuperCook and KitchenPal
 
-**Performed by:** Phan Tuấn Phong · **Reviewed by:** None · **Edited by:** None
+**Performed by:** Phan Tuấn Phong · **Reviewed by:** None yet · **Edited by:** None
 
 **Draft status:** Updated draft · **Date:** 16 October 2026 · **Last updated:** 20 October 2026
 

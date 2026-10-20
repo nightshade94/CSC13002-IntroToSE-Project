@@ -5,6 +5,20 @@ on:
     branches: [main]
   push:
     branches: [main]
+  workflow_dispatch:
+    inputs:
+      head_sha:
+        description: Exact same-repository PR commit to validate
+        required: true
+        type: string
+      base_sha:
+        description: PR base commit for changed-document validation
+        required: true
+        type: string
+      pr_number:
+        description: Open same-repository PR number
+        required: true
+        type: string
 
 permissions:
   contents: read
@@ -16,6 +30,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+          ref: ${{ inputs.head_sha || github.sha }}
+          persist-credentials: false
       - name: Install pnpm
         uses: pnpm/action-setup@v6
       - name: Setup Node.js
@@ -29,3 +47,42 @@ jobs:
           HUSKY: '0'
       - name: Check formatting
         run: pnpm format:check
+      - name: Test documentation metadata CLI
+        run: pnpm docs:meta:test
+      - name: Validate changed academic documentation
+        env:
+          BASE_SHA: ${{ inputs.base_sha || github.event.pull_request.base.sha || github.event.before }}
+        shell: bash
+        run: |
+          if [[ -n "$BASE_SHA" && ! "$BASE_SHA" =~ ^0+$ ]]; then
+            # Dispatched bot heads are branch commits, unlike PR merge commits.
+            # Compare from the common ancestor so base-only changes stay excluded.
+            BASE_SHA=$(git merge-base "$BASE_SHA" HEAD)
+            pnpm docs:meta check --changed "$BASE_SHA"
+          else
+            pnpm docs:meta:check
+          fi
+
+  report-dispatched-result:
+    name: Report bot commit CI result
+    if: always() && github.event_name == 'workflow_dispatch'
+    needs: quality
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: read
+      checks: write
+    steps:
+      - name: Checkout trusted default branch only
+        uses: actions/checkout@v7
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - name: Report actual quality job result on the checked commit
+        run: node scripts/docs-attribution-ci.mjs
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          QUALITY_RESULT: ${{ needs.quality.result }}

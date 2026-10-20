@@ -1,305 +1,312 @@
 # E. Development Tools and Process Setup
 
-**Performed by:** Dư Hoài Phúc · **Reviewed by:** Ngô Huỳnh Thắm · **Edited by:** None
+**Performed by:** Dư Hoài Phúc · **Reviewed by:** None yet · **Edited by:** None
 
-## E.1. Development Process Selection
+## E.1. Development Process
 
-### Process Evaluation
+### Scrum Methodology
 
-A suitable software development process is essential for coordinating tasks, monitoring progress, and ensuring accountability among team members. For Smart Fridge Planner, the team considered several common development approaches.
+The team adopts **Scrum** as its primary development process, following the course requirements. Scrum provides a structured framework for coordinating work, monitoring progress, and delivering project outcomes incrementally.
 
-| Process   | Advantages                                                             | Limitations                                                     |
-| --------- | ---------------------------------------------------------------------- | --------------------------------------------------------------- |
-| Waterfall | Clear development phases and documentation structure                   | Limited flexibility when requirements change                    |
-| Kanban    | Continuous task visualization and flexible work prioritization         | Does not inherently define Sprint planning or review activities |
-| Scrum     | Time-boxed iterations, regular collaboration, and incremental delivery | Requires consistent meetings and active task management         |
+Each Programming Assignment (PA) corresponds to one Sprint lasting approximately 2–3 weeks. Every Sprint includes the following activities:
 
-### Selected Process: Scrum
+| Activity        | Frequency        | Purpose                                                             |
+| --------------- | ---------------- | ------------------------------------------------------------------- |
+| Sprint Planning | Once per Sprint  | Establish Sprint goals, identify tasks, and assign responsibilities |
+| Scrum Meeting   | Twice per Sprint | Report progress, identify obstacles, and coordinate ongoing work    |
+| Sprint Review   | Once per Sprint  | Evaluate completed deliverables and discuss improvements            |
 
-The team selected **Scrum** in accordance with the course requirements. Scrum is suitable for a five-member student team because it encourages communication, clear task ownership, regular feedback, and incremental development.
+Meeting records and weekly reports will follow the format specified in the course's _WeeklyReports_ document.
 
-Each Programming Assignment (PA) corresponds to one Sprint lasting approximately **2–3 weeks**. Every Sprint includes:
+### Application to the Project
 
-| Meeting         | Frequency        | Purpose                                                          |
-| --------------- | ---------------- | ---------------------------------------------------------------- |
-| Sprint Planning | Once per Sprint  | Define Sprint goals, identify tasks, and assign responsibilities |
-| Scrum Meeting   | Twice per Sprint | Review progress, discuss obstacles, and coordinate activities    |
-| Sprint Review   | Once per Sprint  | Evaluate completed deliverables and identify improvements        |
-
-Meeting records and weekly reports will follow the course-provided _WeeklyReports_ format.
-
-### Planned Application
-
-Jira will be used to manage the Sprint Backlog and monitor task progress. The team plans to organize work through the following statuses:
+The team uses Jira to organize Sprint tasks and track progress through the following workflow:
 
 `Backlog → Ready → In Progress → In Review → Done`
 
-These statuses provide visibility into individual tasks, while Sprint meetings support coordination and progress evaluation.
+At Sprint Planning, project requirements will be divided into manageable tasks with clearly assigned responsibilities. During the Sprint, members will update their work status and discuss obstacles through Scrum meetings and Messenger. At the Sprint Review, completed deliverables will be evaluated against the Sprint goals.
 
-Scrum will govern project planning and team collaboration, whereas GitHub Flow will govern source code integration. The two processes serve different purposes and are intended to complement each other.
+This approach promotes accountability and provides regular opportunities to identify issues before they affect project delivery.
 
 ## E.2. Communication and Collaboration Tools
 
-### Tool Evaluation
+The team uses three communication channels, each serving a distinct purpose.
 
-Effective communication is necessary for coordinating work outside formal Sprint meetings. The team considered commonly available communication platforms.
+| Tool          | Purpose                                                                  | Reason for Use                                                            |
+| ------------- | ------------------------------------------------------------------------ | ------------------------------------------------------------------------- |
+| **Moodle**    | Assignment submission and course information                             | Official platform designated by the course                                |
+| **Discord**   | Class-wide announcements, discussions, and questions with the instructor | Provides a common communication channel between students and instructors  |
+| **Messenger** | Internal team communication                                              | Familiar, accessible, and suitable for quick discussions and coordination |
 
-| Tool      | Advantages                                                                      | Limitations                                                             |
-| --------- | ------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| Messenger | Familiar interface, accessible to all members, convenient for quick discussions | Limited structured task tracking and long-term information organization |
-| Discord   | Organized channels, voice communication, and screen sharing                     | Requires additional workspace setup and consistent channel management   |
-| Slack     | Structured discussions and integrations with development tools                  | Introduces another platform and potential free-plan limitations         |
+### Team Communication
 
-### Selected Tool: Messenger
+**Messenger** is selected as the primary communication platform among the five team members. It supports daily updates, meeting coordination, technical discussions, and the sharing of urgent information.
 
-**Messenger** was selected as the team's primary internal communication platform because it is familiar, accessible, and requires minimal additional setup.
+Messenger is intended for informal communication rather than formal task tracking. Decisions that affect task ownership, scope, or deadlines must be reflected in Jira so that the project's progress remains traceable.
 
-The team intends to use Messenger for:
-
-- Daily discussions and progress updates.
-- Coordinating Scrum meetings.
-- Sharing announcements and urgent information.
-- Discussing technical difficulties and implementation decisions.
-
-Messenger supports communication but is not used as the official record of project tasks. Important assignments, responsibilities, and progress updates must be recorded in Jira to maintain traceability.
-
-In addition, **Moodle** and the course **Facebook Group** are used for assignment submissions, official announcements, class discussions, and communication with instructors.
-
-### Selection Rationale
-
-Messenger provides sufficient communication capabilities for a small student team without introducing unnecessary administrative overhead. Separating informal communication from formal task management also helps prevent important assignments from being lost in chat history.
+All members are expected to check team communications regularly and participate actively in project discussions.
 
 ## E.3. Project and Task Management
 
-### Tool Evaluation
-
-The team considered several project management platforms suitable for Scrum-based collaboration.
-
-| Tool   | Advantages                                                                                         | Limitations                                                      |
-| ------ | -------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
-| Trello | Simple Kanban interface and low learning curve                                                     | More limited native support for structured Scrum management      |
-| Asana  | Flexible task organization and collaboration features                                              | Some advanced project management features may depend on the plan |
-| Jira   | Scrum boards, Sprint management, issue tracking, configurable workflows, and detailed task history | Higher initial learning curve and configuration effort           |
-
 ### Selected Tool: Jira
 
-**Jira** was selected as the central project management tool because it provides structured support for Scrum and enables the team to track individual contributions throughout each Sprint.
+The team selects **Jira** as its primary project management tool because it provides dedicated support for Scrum, Sprint planning, task assignment, workflow management, and progress tracking.
 
-Jira is particularly appropriate for the assignment because the course requires evidence of task creation, assignment, and completion.
+Jira is particularly suitable for this assignment because teamwork performance is evaluated through individual task ownership and documented contributions.
 
-### Planned Application
+### Task Management Rules
 
-All project-related work will be tracked in Jira, including:
+Every project-related activity must be recorded in Jira, including:
 
 - Requirement analysis and research.
-- Self-training activities.
-- Documentation and report writing.
+- Self-training and technical exploration.
+- Report writing and documentation.
 - Software design and implementation.
-- Testing and defect resolution.
-- Repository and development environment configuration.
+- Testing, debugging, and repository maintenance.
 
-Each task must have **exactly one assigned team member**. Members may collaborate, but one person remains responsible for the task's completion and updates.
+Each task must be assigned to **exactly one member**. Although members may collaborate, one person must remain accountable for its completion.
 
-The team will follow these task management requirements:
+In addition, tasks must be created and assigned **before work begins**. The team must record task creation, assignment, and actual completion dates. A task may only be marked as completed when its work is genuinely finished.
 
-1. Create and assign tasks **before** work begins.
-2. Record the creation date and assignment date.
-3. Record the actual completion date when the task is finished.
-4. Update task statuses to reflect real progress.
-5. Include screenshots of all relevant Jira tasks in weekly reports, as required by the course.
+Tasks must not be created and closed retrospectively merely to document work that has already been completed.
 
-Tasks must not be created retrospectively and marked as completed immediately after the work has already been performed.
+### Application to Scrum
 
-### Selection Rationale
+Jira will be used to maintain the product backlog, organize tasks for each Sprint, and monitor their progress using the following statuses:
 
-Jira provides a centralized record of responsibilities, progress, and deliverables. Its structured workflow supports transparent evaluation of teamwork and helps the team identify delays or blockers during Sprint meetings.
+`Backlog → Ready → In Progress → In Review → Done`
+
+Sprint meetings will use task information from Jira to identify progress, blockers, and remaining work.
+
+Screenshots of all tasks will be included in weekly reports in accordance with the course requirements.
+
+By centralizing task management in Jira, the team aims to maintain transparent responsibilities and reliable evidence of individual contributions.
 
 ## E.4. Version Control and Code Collaboration
 
-### Tool Evaluation
-
-Version control is essential for managing parallel contributions and maintaining a reliable history of source code and documentation.
-
-The team considered common Git hosting platforms.
-
-| Platform  | Advantages                                                                       | Limitations                                                                             |
-| --------- | -------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| GitHub    | Pull Requests, code reviews, GitHub Actions, and broad developer tooling support | Some advanced repository governance features depend on the account or organization plan |
-| GitLab    | Integrated repository management and CI/CD capabilities                          | May introduce additional workflow and administration complexity                         |
-| Bitbucket | Git collaboration and integration with Atlassian products                        | Less aligned with the team's selected development tooling and existing repository       |
-
 ### Selected Tools: Git and GitHub
 
-The team selected **Git and GitHub** for source code management because of their established collaboration workflow, extensive development tooling, and integration with automated quality checks.
+The team uses **Git and GitHub** for version control and collaborative development.
 
-A private repository has been established for Smart Fridge Planner:
+GitHub was selected because it provides a unified environment for managing source code, Markdown documentation, feature branches, Pull Requests, code reviews, and automated checks.
+
+A private repository has been established for the project:
 
 [CSC13002-IntroToSE-Project](https://github.com/nightshade94/CSC13002-IntroToSE-Project)
 
-The repository stores development configurations and Markdown documentation alongside application code as it is introduced.
+The repository stores documentation and development configurations alongside application code as it is introduced.
 
-The documentation structure is intended to separate project management, requirements, analysis and design, and testing artifacts.
+### GitHub Flow
 
-### Development Workflow
+The team adopts **GitHub Flow** to keep development simple and organized. The intended collaboration process is:
 
-The team adopts **GitHub Flow**, using short-lived branches and Pull Requests.
+1. Select an assigned Jira task.
+2. Create a feature branch from `main`.
+3. Implement changes and perform local verification.
+4. Open a GitHub Pull Request referencing the Jira Issue Key.
+5. Complete automated checks and peer review.
+6. Squash Merge approved changes into `main`.
+7. Update the corresponding Jira task.
 
-The planned workflow is:
+Branch names include the Jira Issue Key, while commit messages follow **Conventional Commits**.
 
-1. Select an assigned Jira Issue.
-2. Create a branch from the latest `main`.
-3. Implement the required changes.
-4. Run relevant local checks.
-5. Open a Pull Request referencing the Jira Issue.
-6. Complete CI checks and peer review.
-7. Squash Merge approved changes into `main`.
-8. Update the Jira Issue when the work is completed.
-
-Branch names include the Jira Issue Key:
+For example:
 
 ```text
-feat/SFP-12-fridge-inventory
-fix/SFP-18-expiry-validation
-docs/SFP-25-update-requirements
+Branch: feat/SCRUM-12-fridge-inventory
+Commit: feat(web): add fridge inventory page SCRUM-12
 ```
 
-Commit messages follow **Conventional Commits** with scopes:
+The team aims to obtain at least one peer approval before merging. Changes affecting authentication, database schemas, or shared interfaces may require additional review.
 
-```text
-feat(web): add fridge inventory page SFP-12
-fix(api): handle invalid food quantity SFP-18
-docs(repo): update project documentation SFP-25
-```
+### Documentation and Contribution Tracking
 
-Pull Requests are expected to receive at least one peer approval before merging. More sensitive changes may require additional review.
+Project documentation is maintained in Markdown and version-controlled through GitHub. This allows changes to requirements, design documents, and project reports to be reviewed alongside source code.
 
-### Selection Rationale
+The repository also includes a documentation attribution mechanism to record the original performer, subsequent editors, and reviewers of academic documents.
 
-GitHub Flow is relatively simple and suitable for a small team. It provides a controlled process for integrating changes while allowing students to practice branching, code review, conflict resolution, and collaborative development.
+This mechanism is intended to complement GitHub's contribution history and support transparent documentation of individual work.
 
-The repository remains private, and credentials, API keys, and other secrets must never be committed.
+For security, API keys, credentials, and other secrets must never be committed to the repository.
 
 ## E.5. Development Environment and Quality Assurance
 
-### Tool Identification and Evaluation
+### Development Toolchain
 
-A consistent development environment helps reduce formatting differences, dependency conflicts, and integration errors.
+The team has established a shared development foundation to support consistent workflows across different development environments.
 
-The team evaluated several tools for repository standardization and quality assurance.
+| Tool                  | Role                                | Status      |
+| --------------------- | ----------------------------------- | ----------- |
+| Node.js 24 LTS        | Standardized JavaScript runtime     | Established |
+| pnpm                  | Dependency and workspace management | Established |
+| Prettier              | Consistent formatting               | Established |
+| Husky + lint-staged   | Lightweight pre-commit validation   | Established |
+| GitHub Actions        | Automated repository checks         | Established |
+| ESLint                | Static code analysis                | Planned     |
+| Vitest                | Automated unit testing              | Planned     |
+| React Testing Library | Frontend component testing          | Planned     |
+| Supertest             | Backend API testing                 | Planned     |
 
-| Category               | Considered Options        | Selected Approach   | Rationale                                                 |
-| ---------------------- | ------------------------- | ------------------- | --------------------------------------------------------- |
-| Package Management     | npm, Yarn, pnpm           | pnpm                | Workspace support and consistent dependency management    |
-| Formatting             | Prettier, Biome           | Prettier            | Widely adopted and straightforward configuration          |
-| Linting                | ESLint, Biome             | ESLint (planned)    | Flexible TypeScript and React linting ecosystem           |
-| Git Hooks              | Husky, Lefthook           | Husky + lint-staged | Lightweight checks on staged files                        |
-| Continuous Integration | GitHub Actions, GitLab CI | GitHub Actions      | Native integration with the selected Git hosting platform |
-| Testing                | Vitest, Jest              | Vitest (planned)    | Suitable for the intended Vite and TypeScript environment |
+These tools were selected for their compatibility with the intended JavaScript and TypeScript technology stack and their ability to support consistent development practices.
 
-### Current Setup
+### Application Architecture
 
-The repository currently provides a shared development foundation consisting of:
+The planned application follows a monorepo structure with:
 
-- **Node.js 24 LTS:** Standardized runtime for development tooling.
-- **pnpm:** Dependency and workspace management.
-- **Prettier:** Consistent formatting of supported files.
-- **Husky and lint-staged:** Lightweight pre-commit checks.
-- **GitHub Actions:** Automated repository checks.
-- **Development documentation:** Contribution guidelines, Git workflow, coding conventions, and testing strategy.
+- **Frontend:** React, Vite, and TypeScript.
+- **Backend:** Node.js, Express, and TypeScript.
+- **Workspace Management:** pnpm.
 
-A lightweight documentation attribution system has also been developed to assist with recording contributors and reviewers in academic Markdown files. This supports the course's emphasis on individual accountability and documented collaboration.
+This structure is intended to simplify dependency management and support shared development conventions across frontend and backend components.
 
-### Planned Improvements
+### Quality Assurance
 
-The intended application technology stack includes:
+The repository currently supports formatting checks, lightweight Git hooks, and automated repository validation through GitHub Actions.
 
-- React, Vite, and TypeScript for frontend development.
-- Node.js, Express, and TypeScript for backend development.
-- ESLint for static code analysis.
-- Vitest, React Testing Library, and Supertest for automated testing.
+As application development progresses, the team intends to expand CI to include linting, type checking, automated tests, and build verification.
 
-As the applications are initialized, the team plans to extend GitHub Actions to include linting, type checking, automated tests, and build verification.
+Pull Requests will serve as the main integration checkpoint, allowing members to review changes and identify problems before merging.
 
-No mandatory test coverage threshold is planned during the initial development stage. The team will prioritize meaningful tests and reliable development practices before introducing stricter quality requirements.
-
-### Selection Rationale
-
-The selected tools provide a practical balance between code quality and usability. Automated formatting and repository checks help reduce avoidable errors, while lightweight configurations allow students to focus on learning essential Software Engineering practices.
+The objective is to introduce quality assurance practices incrementally without imposing unnecessary complexity during the early project stages.
 
 ## E.6. Specification-Driven and AI-Assisted Development
 
-### Tool Evaluation
+### Specification-Driven Development
 
-Specification-driven development (SDD) encourages developers to define expected software behavior before implementation. This approach is particularly useful when working with AI coding assistants because it provides clearer requirements and reduces ambiguity.
+Specification-Driven Development (SDD) emphasizes defining system requirements, expected behavior, and implementation plans before writing code.
 
-The team considered the following approaches.
+This approach is particularly relevant to Smart Fridge Planner because the project involves multiple functional areas, such as food inventory management, expiry tracking, recipe recommendations, and household collaboration.
 
-| Tool / Approach       | Advantages                                                                                                      | Limitations                                                                        |
-| --------------------- | --------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| Manual Specifications | Simple, flexible, and does not require additional tools                                                         | More manual effort to maintain consistency between requirements and implementation |
-| GitHub Spec Kit       | Structured workflow from specification and planning to implementation; directly aligns with course requirements | Requires learning a new workflow and maintaining specification artifacts           |
-| OpenSpec              | Lightweight, iterative, and designed for AI-assisted specification management                                   | Additional tooling and potential overlap with existing project documentation       |
+Clear specifications can help reduce ambiguity, align team members, and provide structured guidance for AI-assisted implementation.
 
-### Selected Tool: Spec Kit
+### Evaluation of Specification Tools
 
-The course explicitly requires **Spec Kit** starting from PA2. Therefore, the team plans to initialize and adopt Spec Kit as the primary specification-driven development tool.
+The team considered three approaches for managing specifications.
 
-OpenSpec was also considered because of its flexible, change-oriented workflow. However, it is not selected as a replacement for Spec Kit, and any additional adoption would depend on project needs and instructor approval.
+| Tool / Approach       | Advantages                                                                                           | Limitations                                                                |
+| --------------------- | ---------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| Manual Specifications | Flexible, familiar, and requires no additional tools                                                 | Greater effort to keep requirements and implementation synchronized        |
+| GitHub Spec Kit       | Structured specification-to-implementation workflow and alignment with the course's required tooling | Additional process and documentation overhead for a small team             |
+| **OpenSpec**          | Lightweight, iterative, change-oriented, and compatible with multiple AI coding assistants           | Requires learning its workflow and maintaining specifications consistently |
 
-### Planned Application
+### Selected Tool: OpenSpec
 
-Starting from PA2, the team intends to use Spec Kit to support:
+After evaluating these approaches, the team selected **OpenSpec** as its preferred specification-driven development solution.
 
-1. Defining feature requirements and expected behavior.
-2. Reviewing specifications before implementation.
-3. Preparing technical plans and implementation tasks.
-4. Guiding AI-assisted code generation.
-5. Verifying implementation against the agreed specifications.
+OpenSpec was favored for several reasons:
 
-Specifications will complement the project's formal requirements documentation and Jira task records rather than replace them.
+**Lightweight workflow.** OpenSpec provides a structured way to describe software changes without requiring an overly rigid development process. This is suitable for a five-member student team.
+
+**Iterative specification management.** Requirements and technical plans can be refined as the team gains a clearer understanding of the project.
+
+**AI-assisted development support.** OpenSpec organizes feature requirements, scenarios, technical decisions, and implementation tasks into artifacts that can guide AI coding assistants.
+
+**Change traceability.** Each significant feature can be associated with a proposal, specifications, design considerations, and implementation tasks, improving the connection between planning and delivery.
+
+**Compatibility with existing tools.** OpenSpec can operate alongside Jira for task management and GitHub for version control without replacing either system.
+
+### Planned Integration
+
+The team intends to introduce OpenSpec into its development workflow as follows:
+
+1. **Jira:** Record, prioritize, and assign a feature task.
+2. **OpenSpec:** Define the proposed change, requirements, design, and implementation tasks.
+3. **Team Review:** Verify that the specification reflects the intended functionality.
+4. **AI-Assisted Implementation:** Develop the feature using the reviewed specification as guidance.
+5. **GitHub:** Submit the implementation through a Pull Request.
+6. **Verification:** Review the implementation and run the available automated checks.
+7. **Specification Update:** Archive the completed change and maintain the current specifications.
+
+OpenSpec will primarily be used for significant features and architectural changes. Minor fixes or documentation updates may follow the standard Jira and GitHub workflow without requiring a separate specification.
+
+This selective approach is intended to reduce unnecessary documentation overhead.
+
+### Course Requirement Consideration
+
+The course instructions explicitly require **GitHub Spec Kit** setup and initialization starting from PA2.
+
+Although OpenSpec is the team's preferred solution, its use as a substitute for Spec Kit requires confirmation from the instructor.
+
+If substitution is not permitted, the team will fulfill the mandatory Spec Kit requirements while avoiding unnecessary duplication between specification workflows.
+
+## E.7. AI Coding Tools
+
+### Purpose
+
+AI coding assistants are incorporated into the development workflow to support productivity, technical learning, and software quality. They can assist team members with understanding unfamiliar technologies, generating implementation suggestions, identifying errors, writing tests, and improving documentation.
+
+All five team members have registered for AI coding accounts, as required by the course. However, the specific tools used may differ depending on individual preferences and development needs.
+
+### Team Members and Selected Tools
+
+| Team Member      | AI Coding Tool(s)                 | Main Usage                     |
+| ---------------- | --------------------------------- | ------------------------------ |
+| Nguyễn Cao Thông | ChatGPT Plus + Codex free 1 month | Code, Documentation and Review |
+| Ngô Huỳnh Thắm   | ChatGPT Plus + Codex free 1 month | Code, Documentation and Review |
+| Phan Tuấn Phong  | ChatGPT Plus + Codex free 1 month | Code, Documentation and Review |
+| Dư Hoài Phúc     | Codex                             | Code, Documentation and Review |
+| Cao Tiến Thiên   | Claude                            | Code, Documentation and Review |
+
+### Application in the Development Workflow
+
+AI coding assistants may be used to support the following activities:
+
+- **Requirement Analysis:** Clarifying requirements and exploring possible solutions.
+- **Implementation:** Suggesting code structures and implementation approaches based on agreed specifications.
+- **Debugging:** Explaining errors and suggesting potential fixes.
+- **Testing:** Assisting with test case identification and automated test generation.
+- **Documentation:** Improving technical explanations and maintaining development documents.
+- **Self-Training:** Helping members understand unfamiliar frameworks, libraries, and development practices.
+
+Where applicable, AI assistants will use reviewed OpenSpec artifacts as context to keep implementation aligned with the intended requirements.
+
+### Responsible AI Usage
+
+AI-generated results are treated as suggestions rather than verified solutions. Each team member remains responsible for understanding, reviewing, testing, and validating the work submitted under their assigned Jira tasks.
+
+The team will also avoid sharing credentials, API keys, private user information, or other sensitive data with AI tools.
 
 ### AI Coding Assistants
 
 All five team members have registered for AI coding accounts.
 
-AI coding assistants may support requirement exploration, technical research, implementation, debugging, test generation, and documentation.
+AI assistants may support requirement analysis, technical exploration, implementation, debugging, testing, and documentation.
 
-However, AI-generated results must be reviewed by the responsible team members. The team remains accountable for requirement correctness, implementation quality, and the final submitted deliverables.
+However, AI-generated outputs must be reviewed and verified by the responsible team members. The use of AI does not replace individual accountability for assigned tasks or the quality of submitted deliverables.
 
-### Selection Rationale
+### Conclusion
 
-Spec Kit was selected to satisfy course requirements and provide a structured approach to AI-assisted development. Its intended use supports the educational goal of connecting requirements, design decisions, implementation, and verification.
+AI coding assistants are intended to improve development efficiency and support technical learning. Their use complements, rather than replaces, individual responsibility, teamwork, code review, and software engineering practices.
 
-## E.7. Overall Workflow Integration
+## E.8. Overall Workflow Integration
 
-The selected tools serve complementary roles within the development process.
+The selected tools have complementary responsibilities within the project.
 
-| Development Activity                   | Primary Tool         |
-| -------------------------------------- | -------------------- |
-| Assignment submission                  | Moodle               |
-| Course announcements and discussions   | Facebook Group       |
-| Internal communication                 | Messenger            |
-| Sprint planning and task tracking      | Jira                 |
-| Specification-driven development       | Spec Kit (from PA2)  |
-| Implementation support                 | AI Coding Assistants |
-| Version control and code review        | GitHub               |
-| Automated repository checks            | GitHub Actions       |
-| Documentation and contribution records | GitHub repository    |
+| Development Activity               | Primary Tool                                     |
+| ---------------------------------- | ------------------------------------------------ |
+| Assignment submission              | Moodle                                           |
+| Course communication               | Discord                                          |
+| Internal communication             | Messenger                                        |
+| Scrum planning and task management | Jira                                             |
+| Specification-driven development   | OpenSpec (preferred; subject to course approval) |
+| AI-assisted development            | AI Coding Assistants                             |
+| Version control and code review    | GitHub                                           |
+| Automated quality checks           | GitHub Actions                                   |
 
-The intended collaboration process connects these tools as follows:
+The intended overall workflow is:
 
-**Sprint Planning → Jira Task Assignment → Specification & Planning → Implementation → GitHub Pull Request → CI & Code Review → Sprint Review**
+**Sprint Planning → Jira Task Assignment → Specification and Design → Implementation → GitHub Pull Request → CI and Peer Review → Sprint Review**
 
-This process provides traceability from task allocation to completed deliverables. Jira records task ownership and progress, GitHub records implementation history and reviews, and specification artifacts document expected system behavior.
+Jira provides visibility into task ownership and progress, OpenSpec provides structured feature specifications, and GitHub maintains the history of implementation and review activities.
 
-The team intends to keep the workflow lightweight and adjust supporting practices as members gain experience.
+This separation of responsibilities is intended to support traceability without duplicating the primary functions of each tool.
 
-## E.8. Conclusion
+## E.9. Conclusion
 
-The Smart Fridge Planner team has selected a development toolset that balances course requirements, professional Software Engineering practices, and the capabilities of a five-member student team.
+The Smart Fridge Planner team has selected a development environment that emphasizes collaboration, accountability, and practical Software Engineering practices.
 
-Scrum provides the overall development process, Jira supports task management and accountability, Messenger enables daily communication, and GitHub provides collaborative version control. Repository tooling and GitHub Actions support consistency and quality assurance.
+Scrum provides the overall development process, Jira supports Sprint and task management, Messenger enables daily communication, and GitHub supports collaborative version control and code review. Pre-commit tooling and GitHub Actions contribute to development consistency and quality assurance.
 
-Spec Kit is planned for adoption from PA2, while AI coding assistants will support development under human supervision.
+After comparing specification management approaches, the team selected **OpenSpec** as its preferred SDD tool because of its lightweight and iterative workflow, suitability for AI-assisted development, and compatibility with the team's existing tools. Its use as a substitute for the course-required Spec Kit remains subject to instructor approval.
 
-Together, these tools are expected to improve communication, task transparency, development quality, and traceability of individual contributions. The team's priority is not to maximize the number of tools used, but to establish a **practical, maintainable, and accountable development workflow** that supports both project delivery and the learning objectives of the course.
+Together, these tools are intended to establish a **structured, manageable, and traceable development workflow** that supports both project delivery and the educational objectives of the Introduction to Software Engineering course.

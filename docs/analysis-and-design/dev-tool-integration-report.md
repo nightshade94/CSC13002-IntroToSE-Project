@@ -1,6 +1,6 @@
 # E. Development Tools and Process Setup
 
-**Performed by:** Dư Hoài Phúc · **Reviewed by:** None yet · **Edited by:** None
+**Performed by:** Dư Hoài Phúc · **Reviewed by:** Ngô Huỳnh Thắm · **Edited by:** None
 
 ## E.1. Development Process
 

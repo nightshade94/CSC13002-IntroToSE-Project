@@ -9,6 +9,9 @@
   "scripts": {
     "format": "prettier . --write",
     "format:check": "prettier . --check",
+    "docs:meta": "node scripts/docs-metadata.mjs",
+    "docs:meta:check": "node scripts/docs-metadata.mjs check",
+    "docs:meta:test": "node --test tests/docs-metadata.test.mjs tests/docs-attribution.test.mjs",
     "prepare": "husky"
   },
   "devDependencies": {

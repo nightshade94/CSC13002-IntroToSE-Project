@@ -1,0 +1,65 @@
+name: Document attribution
+
+on:
+  pull_request_target:
+    branches: [main]
+    types: [opened, synchronize, reopened]
+  issue_comment:
+    types: [created]
+  workflow_run:
+    workflows: [Document review notification]
+    types: [completed]
+
+permissions: {}
+
+# Serialize bot comment updates and confirmations. Every run fetches fresh API state.
+concurrency:
+  group: document-attribution
+  cancel-in-progress: false
+
+jobs:
+  propose:
+    if: >-
+      github.event_name != 'issue_comment' ||
+      (github.event.issue.pull_request && startsWith(github.event.comment.body, '/propose-attribution'))
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - name: Checkout trusted default branch only
+        uses: actions/checkout@v7
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - name: Propose attribution from API data
+        run: node scripts/docs-attribution.mjs propose
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+
+  apply:
+    if: >-
+      github.event_name == 'issue_comment' && github.event.issue.pull_request &&
+      (startsWith(github.event.comment.body, '/apply-attribution') ||
+      startsWith(github.event.comment.body, '/apply-review-attribution'))
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      actions: write
+    steps:
+      - name: Checkout trusted default branch only
+        uses: actions/checkout@v7
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - name: Apply only an authorized current confirmation
+        run: node scripts/docs-attribution.mjs apply
+        env:
+          GITHUB_TOKEN: ${{ github.token }}

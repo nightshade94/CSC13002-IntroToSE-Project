@@ -1,0 +1,16 @@
+name: Document review notification
+
+on:
+  pull_request_review:
+    types: [submitted, dismissed, edited]
+
+# This workflow can come from a PR. It receives no useful token permissions,
+# executes no repository scripts and sends no artifacts to privileged code.
+permissions: {}
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify trusted workflow through workflow_run
+        run: echo 'Review event received; the default-branch workflow will fetch current reviews.'

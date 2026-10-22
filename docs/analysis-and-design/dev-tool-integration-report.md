@@ -305,9 +305,27 @@ However, AI-generated outputs must be reviewed and verified by the responsible t
 
 ### Evidence of AI Coding Accounts
 
-The following screenshots provide evidence that team members have registered for AI coding accounts.
+The following screenshots provide evidence that all five team members have registered for AI coding accounts.
 
-![AI Account](screenshot/DevTools/AI.png)
+![Member 1 AI Account](screenshot/DevTools/DHP_AI.png)
+
+_AI coding account of Dư Hoài Phúc._
+
+![Member 2 AI Account](screenshot/DevTools/NCT_AI.png)
+
+_AI coding account of Nguyễn Cao Thông._
+
+![Member 3 AI Account](screenshot/DevTools/NHT_AI.png)
+
+_AI coding account of Ngô Huỳnh Thắm._
+
+![Member 4 AI Account](screenshot/DevTools/CTT_AI.png)
+
+_AI coding account of Cao Tiến Thiên._
+
+![Member 5 AI Account](screenshot/DevTools/PTP_AI.png)
+
+_AI coding account of Phan Tuấn Phong._
 
 ### Conclusion
 

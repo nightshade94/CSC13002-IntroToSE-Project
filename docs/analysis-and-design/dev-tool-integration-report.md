@@ -82,6 +82,19 @@ Screenshots of all tasks will be included in weekly reports in accordance with t
 
 By centralizing task management in Jira, the team aims to maintain transparent responsibilities and reliable evidence of individual contributions.
 
+### Evidence of Jira Setup and Task Management
+
+The following screenshots demonstrate the Jira project
+configuration and task-tracking activities.
+
+![Jira Scrum Board](screenshot/DevTools/Jira%20Scrum%20Board.png)
+
+_Figure E.1. Jira Scrum Board showing the team's task management workflow._
+
+![Jira Task Details](screenshot/DevTools/Jira%20Task%20Details.png)
+
+_Figure E.2. Jira issue details showing task ownership, status, and recorded activity._
+
 ## E.4. Version Control and Code Collaboration
 
 ### Selected Tools: Git and GitHub
@@ -129,6 +142,16 @@ This mechanism is intended to complement GitHub's contribution history and suppo
 
 For security, API keys, credentials, and other secrets must never be committed to the repository.
 
+### Evidence of GitHub Repository Setup
+
+![GitHub Repository Structure](screenshot/DevTools/GitHub%20Repository%20Structure.png)
+
+_Figure E.3. Private GitHub repository structure containing project documentation and development files._
+
+![GitHub Pull Request](screenshot/DevTools/GitHub%20Pull%20Request.png)
+
+_Figure E.4. GitHub Pull Request used for collaborative development and code review._
+
 ## E.5. Development Environment and Quality Assurance
 
 ### Development Toolchain
@@ -168,6 +191,12 @@ As application development progresses, the team intends to expand CI to include 
 Pull Requests will serve as the main integration checkpoint, allowing members to review changes and identify problems before merging.
 
 The objective is to introduce quality assurance practices incrementally without imposing unnecessary complexity during the early project stages.
+
+### Evidence of Continuous Integration
+
+![GitHub Actions](screenshot/DevTools/CI%20Checks.png)
+
+_Figure E.5. GitHub Actions workflow execution for repository quality checks._
 
 ## E.6. Specification-Driven and AI-Assisted Development
 
@@ -239,13 +268,13 @@ All five team members have registered for AI coding accounts, as required by the
 
 ### Team Members and Selected Tools
 
-| Team Member      | AI Coding Tool(s)                 | Main Usage                     |
-| ---------------- | --------------------------------- | ------------------------------ |
-| Nguyễn Cao Thông | ChatGPT Plus + Codex free 1 month | Code, Documentation and Review |
-| Ngô Huỳnh Thắm   | ChatGPT Plus + Codex free 1 month | Code, Documentation and Review |
-| Phan Tuấn Phong  | ChatGPT Plus + Codex free 1 month | Code, Documentation and Review |
-| Dư Hoài Phúc     | Codex                             | Code, Documentation and Review |
-| Cao Tiến Thiên   | Claude                            | Code, Documentation and Review |
+| Team Member      | AI Coding Tool(s)    | Main Usage                     |
+| ---------------- | -------------------- | ------------------------------ |
+| Nguyễn Cao Thông | ChatGPT Plus + Codex | Code, Documentation and Review |
+| Ngô Huỳnh Thắm   | ChatGPT Plus + Codex | Code, Documentation and Review |
+| Phan Tuấn Phong  | ChatGPT Plus + Codex | Code, Documentation and Review |
+| Dư Hoài Phúc     | ChatGPT Plus + Codex | Code, Documentation and Review |
+| Cao Tiến Thiên   | Claude               | Code, Documentation and Review |
 
 ### Application in the Development Workflow
 
@@ -273,6 +302,12 @@ All five team members have registered for AI coding accounts.
 AI assistants may support requirement analysis, technical exploration, implementation, debugging, testing, and documentation.
 
 However, AI-generated outputs must be reviewed and verified by the responsible team members. The use of AI does not replace individual accountability for assigned tasks or the quality of submitted deliverables.
+
+### Evidence of AI Coding Accounts
+
+The following screenshots provide evidence that team members have registered for AI coding accounts.
+
+![AI Account](screenshot/DevTools/AI.png)
 
 ### Conclusion
 

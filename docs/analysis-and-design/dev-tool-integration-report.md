@@ -4,6 +4,8 @@
 
 ## E.1. Development Process
 
+**Performed by:** Dư Hoài Phúc · **Reviewed by:** Ngô Huỳnh Thắm · **Edited by:** None
+
 ### Scrum Methodology
 
 The team adopts **Scrum** as its primary development process, following the course requirements. Scrum provides a structured framework for coordinating work, monitoring progress, and delivering project outcomes incrementally.
@@ -30,6 +32,8 @@ This approach promotes accountability and provides regular opportunities to iden
 
 ## E.2. Communication and Collaboration Tools
 
+**Performed by:** Dư Hoài Phúc · **Reviewed by:** Ngô Huỳnh Thắm · **Edited by:** None
+
 The team uses three communication channels, each serving a distinct purpose.
 
 | Tool          | Purpose                                                                  | Reason for Use                                                            |
@@ -47,6 +51,8 @@ Messenger is intended for informal communication rather than formal task trackin
 All members are expected to check team communications regularly and participate actively in project discussions.
 
 ## E.3. Project and Task Management
+
+**Performed by:** Dư Hoài Phúc · **Reviewed by:** Ngô Huỳnh Thắm · **Edited by:** None
 
 ### Selected Tool: Jira
 
@@ -96,6 +102,8 @@ _Figure E.1. Jira Scrum Board showing the team's task management workflow._
 _Figure E.2. Jira issue details showing task ownership, status, and recorded activity._
 
 ## E.4. Version Control and Code Collaboration
+
+**Performed by:** Dư Hoài Phúc · **Reviewed by:** Ngô Huỳnh Thắm · **Edited by:** None
 
 ### Selected Tools: Git and GitHub
 
@@ -154,6 +162,8 @@ _Figure E.4. GitHub Pull Request used for collaborative development and code rev
 
 ## E.5. Development Environment and Quality Assurance
 
+**Performed by:** Dư Hoài Phúc · **Reviewed by:** Ngô Huỳnh Thắm · **Edited by:** None
+
 ### Development Toolchain
 
 The team has established a shared development foundation to support consistent workflows across different development environments.
@@ -199,6 +209,8 @@ The objective is to introduce quality assurance practices incrementally without 
 _Figure E.5. GitHub Actions workflow execution for repository quality checks._
 
 ## E.6. Specification-Driven and AI-Assisted Development
+
+**Performed by:** Dư Hoài Phúc · **Reviewed by:** Ngô Huỳnh Thắm · **Edited by:** None
 
 ### Specification-Driven Development
 
@@ -259,6 +271,8 @@ Although OpenSpec is the team's preferred solution, its use as a substitute for 
 If substitution is not permitted, the team will fulfill the mandatory Spec Kit requirements while avoiding unnecessary duplication between specification workflows.
 
 ## E.7. AI Coding Tools
+
+**Performed by:** Dư Hoài Phúc · **Reviewed by:** Ngô Huỳnh Thắm · **Edited by:** None
 
 ### Purpose
 
@@ -333,6 +347,8 @@ AI coding assistants are intended to improve development efficiency and support 
 
 ## E.8. Overall Workflow Integration
 
+**Performed by:** Dư Hoài Phúc · **Reviewed by:** Ngô Huỳnh Thắm · **Edited by:** None
+
 The selected tools have complementary responsibilities within the project.
 
 | Development Activity               | Primary Tool                                     |
@@ -355,6 +371,8 @@ Jira provides visibility into task ownership and progress, OpenSpec provides str
 This separation of responsibilities is intended to support traceability without duplicating the primary functions of each tool.
 
 ## E.9. Conclusion
+
+**Performed by:** Dư Hoài Phúc · **Reviewed by:** Ngô Huỳnh Thắm · **Edited by:** None
 
 The Smart Fridge Planner team has selected a development environment that emphasizes collaboration, accountability, and practical Software Engineering practices.
 

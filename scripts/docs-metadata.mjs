@@ -4,7 +4,8 @@ import { fileURLToPath } from 'node:url';
 import { execFileSync } from 'node:child_process';
 
 const repositoryRoot = fileURLToPath(new URL('../', import.meta.url));
-const labels = /(?:Performed|Reviewed|Edited)\s+by\b/i;
+const labels =
+  /^(?:\uFEFF)?\s*(?:[-*+]\s+)?(?:\*{1,2}|_{1,2})?(?:Performed|Reviewed|Edited)\s+by\b/i;
 const canonical =
   /^\*\*Performed by:\*\* (.+) · \*\*Reviewed by:\*\* (.+) · \*\*Edited by:\*\* (.+)$/;
 
@@ -23,7 +24,8 @@ init inserts after the first H1 title, or at the start when no H1 exists.
 edit/review append names once, preserving the performer and other fields.
 --confirm-review declares a completed human review; no GitHub approval is verified.
 check is read-only. --changed checks managed files changed since a base commit.
-Legacy section attribution must be reconciled manually before using this tool.
+check validates every attribution line, including per-section attribution.
+edit/review require one attribution line; edit section metadata manually.
 `;
 
 function fail(message) {
@@ -136,8 +138,8 @@ async function documentPath(context, file) {
 }
 
 export function attributionLines(content) {
-  // Fenced examples are content, not attribution. Other attribution-like lines are
-  // deliberately rejected rather than guessing whether old section metadata is valid.
+  // Fenced examples and prose mentioning the labels are content, not attribution.
+  // Field-like lines are still included so malformed metadata is reported.
   let fence;
   return content.split(/\r?\n/).flatMap((line, index) => {
     const marker = /^(?:\uFEFF)? {0,3}(`{3,}|~{3,})/.exec(line);
@@ -156,13 +158,30 @@ export function attributionLines(content) {
 }
 
 export function parseMetadata(content, names) {
-  const lines = attributionLines(content);
-  if (lines.length !== 1) {
+  const entries = parseAttributions(content, names);
+  if (entries.length !== 1) {
     fail(
-      `Expected exactly one attribution line; found ${lines.length}. Initialize missing metadata or manually reconcile legacy section attribution.`,
+      `This write helper requires one attribution line; found ${entries.length}. Per-section attribution is valid; update the relevant section lines manually.`,
     );
   }
-  const match = canonical.exec(lines[0].line.replace(/^\uFEFF/, ''));
+  return entries[0];
+}
+
+export function parseAttributions(content, names) {
+  const lines = attributionLines(content);
+  if (!lines.length)
+    fail('Expected at least one attribution line; found 0. Initialize missing metadata.');
+  return lines.map((entry) => {
+    try {
+      return parseAttribution(entry, names);
+    } catch (error) {
+      fail(`Line ${entry.index + 1}: ${error.message}`);
+    }
+  });
+}
+
+function parseAttribution(entry, names) {
+  const match = canonical.exec(entry.line.replace(/^\uFEFF/, ''));
   if (!match)
     fail(
       'Malformed attribution. Expected: **Performed by:** Name · **Reviewed by:** None yet · **Edited by:** None',
@@ -185,7 +204,7 @@ export function parseMetadata(content, names) {
   const reviewers = list(reviewed, 'None yet', 'Reviewed by');
   const editors = list(edited, 'None', 'Edited by');
   if (reviewers.includes(performer)) fail('Performed by cannot review their own document.');
-  return { performer, reviewers, editors, ...lines[0] };
+  return { performer, reviewers, editors, ...entry };
 }
 
 function formatMetadata({ performer, reviewers, editors }) {
@@ -379,7 +398,7 @@ export async function run(args, root = repositoryRoot, log = console.log) {
   for (const file of selected) {
     try {
       const target = await documentPath(context, file);
-      parseMetadata(await readFile(target, 'utf8'), context.names);
+      parseAttributions(await readFile(target, 'utf8'), context.names);
     } catch (error) {
       log(`${file}: ${error.message}`);
       errors++;

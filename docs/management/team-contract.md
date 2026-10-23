@@ -59,7 +59,7 @@ When schedules allow, the team may meet offline on Tuesday morning for one of th
 | Scrum meeting 2                     | Second target recurring date and time, later in the sprint: [to be agreed]                                                     |
 | Optional offline Scrum/work session | Tuesday morning when schedules allow; may coincide with one of the two Scrum meetings; confirm time and place in the team chat |
 | Sprint Review                       | Near the end of each sprint; date and time agreed at planning                                                                  |
-| Course submission deadline          | [date and time, when announced]                                                                                                |
+| Course submission deadline          | [date and time, when announced of each sprint]                                                                                 |
 | Internal completion deadline        | At least 24 hours before the course deadline, unless the team records a different buffer and reason                            |
 
 At Sprint Planning, each task will have a clear outcome, exactly one owner, creation and assignment dates, an agreed target date, and a completion date recorded when finished. Tasks must be created and assigned in Jira before work begins; members must not create, assign, and complete a task retroactively. Dependencies and review time should be included in estimates.

@@ -1,6 +1,6 @@
 # C - Existing App Survey: Well Stockd, SuperCook and KitchenPal
 
-**Performed by:** Phan Tuấn Phong · **Reviewed by:** None yet · **Edited by:** None
+**Performed by:** Phan Tuấn Phong · **Reviewed by:** Dư Hoài Phúc · **Edited by:** None
 
 **Draft status:** Updated draft · **Date:** 16 October 2026 · **Last updated:** 20 October 2026
 
@@ -14,6 +14,8 @@ This draft surveys **Well Stockd**, **SuperCook** and **KitchenPal** as existing
 - [4. Cross-App Comparison and Project Implications](#4-cross-app-comparison-and-project-implications)
 
 ## 1. Well Stockd
+
+**Performed by:** Phan Tuấn Phong · **Reviewed by:** Dư Hoài Phúc · **Edited by:** None
 
 **Status:** Sampled hands-on survey completed.
 
@@ -200,6 +202,8 @@ Codex assisted with browser operation, screenshot collection, evidence organizat
 
 ## 2. SuperCook
 
+**Performed by:** Phan Tuấn Phong · **Reviewed by:** Dư Hoài Phúc · **Edited by:** None
+
 **Status:** Sampled guest-web survey completed. This is app 2 of the four requested surveys.
 
 **Project context:** A shared fridge/pantry web application with food inventory, household collaboration, recipe and nutrition planning, AI assistance, community interactions and possible business promotions.
@@ -359,6 +363,8 @@ The sixteen SuperCook figures are supplied under `screenshot/SuperCook/`; the ni
 Codex assisted with browser operation, screenshot capture, source checking and English drafting. The student authorized the survey and should retain this conversation as AI-use evidence. KitchenPal was subsequently surveyed in Section 3; Paprika remains pending. For the SuperCook session, no interviews, physical cooking, successful shopping-list persistence or unperformed tests are claimed.
 
 ## 3. KitchenPal
+
+**Performed by:** Phan Tuấn Phong · **Reviewed by:** Dư Hoài Phúc · **Edited by:** None
 
 **Status:** Sampled hands-on survey completed for the desktop web beta in Guest/Basic mode on October 20, 2026. Mobile-only and Premium capabilities are distinguished from executed workflows.
 
@@ -553,6 +559,8 @@ Sources accessed October 20, 2026:
 All 24 KitchenPal images are first-hand browser screenshots under `screenshot/KitchenPal/`, not downloaded vendor mockups. Codex assisted with browser operation, synthetic test-data entry, screenshot capture, official-source checks, English drafting and comparison updates. The student authorized this survey; retain this conversation as AI-use evidence. No interview, physical cooking, real purchase, paid subscription or unperformed test is claimed. Paprika remains outside the completed survey scope.
 
 ## 4. Cross-App Comparison and Project Implications
+
+**Performed by:** Phan Tuấn Phong · **Reviewed by:** Dư Hoài Phúc · **Edited by:** None
 
 The comparison uses the sampled Well Stockd, SuperCook and KitchenPal surveys in Sections 1-3. Well Stockd was tested in a signed-in trial account; SuperCook and KitchenPal were tested as guests, and KitchenPal's desktop web interface was a beta. Access conditions and survey dates differ. An unobserved or gated capability is not proof of product-wide absence. Paprika has not yet been surveyed in this sequence.
 

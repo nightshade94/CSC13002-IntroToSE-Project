@@ -115,7 +115,7 @@ Team members will address disagreements respectfully and focus on the work and i
 
 ## Review and Update Process
 
-**Performed by:** Nguyễn Cao Thông · **Reviewed by:** None yet · **Edited by:** [None]
+**Performed by:** Nguyễn Cao Thông · **Reviewed by:** Ngô Huỳnh Thắm · **Edited by:** Ngô Huỳnh Thắm
 
 The team will review this contract during each Sprint Review and whenever team membership, availability, tools, or project needs change materially. Any member may propose an update. The team will discuss the proposed change, agree to it using the Decision-Making Process, and record the revision date and summary below. Updates apply after they are shared with all members.
 
@@ -126,11 +126,7 @@ The team will review this contract during each Sprint Review and whenever team m
 
 ## Team Agreement
 
-**Performed by:** Nguyễn Cao Thông · **Reviewed by:** None yet · **Edited by:** [None]
-
-**Agreement status:** Not yet reviewed or agreed by any team member.
-
-The expectations below are proposals in this initial draft. They become team commitments only after the members review the contract and record their agreement. Until then, the signature table is intentionally pending.
+**Performed by:** Nguyễn Cao Thông · **Reviewed by:** Ngô Huỳnh Thắm · **Edited by:** Ngô Huỳnh Thắm
 
 | Member                          | Confirmation | Date       |
 | ------------------------------- | ------------ | ---------- |

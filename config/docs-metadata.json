@@ -1,0 +1,10 @@
+{
+  "include": [
+    "docs/analysis-and-design",
+    "docs/discussion",
+    "docs/management",
+    "docs/requirements",
+    "docs/architecture"
+  ],
+  "exclude": ["README.md", "CONTRIBUTING.md", "docs/development"]
+}

@@ -151,3 +151,6 @@ vite.config.ts.timestamp-*
 # Local operating system files
 .DS_Store
 Thumbs.db
+
+# Local submission package
+/docs/submit/

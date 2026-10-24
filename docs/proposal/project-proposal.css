@@ -1,0 +1,10 @@
+.markdown-preview .mermaid {
+  text-align: center;
+}
+
+.markdown-preview .mermaid svg {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}

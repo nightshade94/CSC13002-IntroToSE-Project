@@ -38,19 +38,15 @@ Our web app turns the household fridge into a **shared, always up-to-date food i
 **Household users and community participants** work in one loop: household users keep the fridge up to date and cook from it, while community participants share and discuss recipes that feed back into the recommendations.
 
 ```mermaid
-%%{init: {"theme": "base", "htmlLabels": false, "themeVariables": {"fontSize": "12px"}, "flowchart": {"useMaxWidth": false, "wrappingWidth": 180, "nodeSpacing": 18, "rankSpacing": 18}}}%%
+%%{init: {"theme": "base", "themeVariables": {"fontSize": "14px"}, "flowchart": {"useMaxWidth": false}}}%%
 flowchart TB
-A["`AI adds food
-from a bill or photo`"] --> B["`Shared inventory
-and expiry/stock alerts`"]
-B --> C["`AI recommends recipes
-and plans meals`"]
-C --> D["`Cook and deduct
-used food`"]
-D -. "update inventory" .-> A
-E["`Community members
-search, post, and comment`"] -. "new recipes" .-> C
-D -. "share a dish" .-> E
+A["Add food from receipts<br/>or food photos"] --> B["Track shared inventory"]
+B --> C["Check expiry and<br/>low-stock alerts"]
+C --> D["Get recipe ideas<br/>and plan meals"]
+D --> E["Cook and update<br/>food quantities"]
+E -. "next shopping trip" .-> A
+F["Community members search,<br/>share, and discuss recipes"] -. "new recipe ideas" .-> D
+E -. "share a dish" .-> F
 ```
 
 <p align="center"><em>Figure 1. Household food and recipe workflow.</em></p>
@@ -183,14 +179,15 @@ Administrators can manage user accounts to address account-related issues. They 
 Users can upload a receipt or food photo instead of entering every item manually. OCR reads receipt text to identify possible food items, while image recognition identifies food in photos. The app suggests quantities and estimated expiration dates, and users review and correct these suggestions before saving them to the household inventory.
 
 ```mermaid
-%%{init: {"theme": "base", "themeVariables": {"fontSize": "12px"}, "flowchart": {"useMaxWidth": false, "nodeSpacing": 18, "rankSpacing": 16}}}%%
+%%{init: {"theme": "base", "themeVariables": {"fontSize": "12px"}, "flowchart": {"useMaxWidth": false}}}%%
 flowchart TD
-A["Upload receipt<br/>or food photo"] -->|Receipt| B["OCR reads receipt<br/>and identifies food"]
-A -->|Food photo| C["Image recognition<br/>identifies food"]
-B --> D["Suggest items, quantities<br/>and expiration dates"]
-C --> D
-D --> E["Review and correct<br/>suggested entries"]
-E --> F["Save to household<br/>inventory"]
+A["Upload receipt<br/>or food photo"] --> B{"Input type"}
+B -->|Receipt| C["Read receipt with OCR<br/>Identify food items"]
+B -->|Food photo| D["Recognize food<br/>in the photo"]
+C --> E["Suggest food items<br/>quantities and expiration dates"]
+D --> E
+E --> F["Review and correct<br/>suggested entries"]
+F --> G["Save to household<br/>inventory"]
 ```
 
 <p align="center"><em>Figure 3. AI-assisted food entry workflow.</em></p>
@@ -200,12 +197,13 @@ E --> F["Save to household<br/>inventory"]
 The app compares recipe requirements with the household’s recorded food and quantities. It prioritizes recipes that use ingredients nearing their estimated expiration dates, identifies missing ingredients, and explains each suggestion. Users decide which recipe to make; choosing one does not automatically change their inventory or shopping list.
 
 ```mermaid
-%%{init: {"theme": "base", "themeVariables": {"fontSize": "12px"}, "flowchart": {"useMaxWidth": false, "nodeSpacing": 18, "rankSpacing": 16}}}%%
+%%{init: {"theme": "base", "themeVariables": {"fontSize": "12px"}, "flowchart": {"useMaxWidth": false}}}%%
 flowchart TD
-A["Household inventory<br/>and quantities"] --> C["Compare ingredients<br/>and prioritize expiry"]
+A["Household inventory<br/>and quantities"] --> C["Compare with<br/>recipe ingredients"]
 B["Recipe catalog"] --> C
-C --> D["Show recipes, reasons<br/>and missing ingredients"]
-D --> E["Choose a recipe"]
+C --> D["Prioritize food<br/>nearing expiration"]
+D --> E["Show recipes, reasons<br/>and missing ingredients"]
+E --> F["Choose a recipe"]
 ```
 
 <p align="center"><em>Figure 4. Inventory-aware recipe recommendation workflow.</em></p>

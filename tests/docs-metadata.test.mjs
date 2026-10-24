@@ -4,7 +4,14 @@ import { mkdtemp, mkdir, writeFile, readFile, rm, stat, symlink } from 'node:fs/
 import path from 'node:path';
 import os from 'node:os';
 import { execFileSync } from 'node:child_process';
-import { loadContext, parseMetadata, updateDocument, run } from '../scripts/docs-metadata.mjs';
+import {
+  loadContext,
+  parseMetadata,
+  parseAttributions,
+  attributionLines,
+  updateDocument,
+  run,
+} from '../scripts/docs-metadata.mjs';
 import { fileURLToPath } from 'node:url';
 
 const members = {
@@ -183,7 +190,41 @@ test('valid initial metadata accepts both sentinel values', () => {
   assert.deepEqual(parseMetadata(metadata, names).reviewers, []);
 });
 
-test('validation rejects missing/unknown names, malformed delimiters, duplicates and legacy sections', () => {
+test('check accepts independent section attribution and ignores prose and fenced examples', async (t) => {
+  const second = metadata.replace(members.alice, members.bob).replace('None yet', members.alice);
+  const content = `# Title\n\n${metadata}\n\n## Section\n\n${second}\n\n- For each section, put the Performed by / Reviewed by / Edited by attribution after its heading.\n\n\`\`\`md\n${metadata}\n\`\`\`\n`;
+  const f = await fixture(t, content);
+  assert.equal(attributionLines(content).length, 2);
+  const entries = parseAttributions(content, names);
+  assert.deepEqual(
+    entries.map((entry) => entry.performer),
+    [members.alice, members.bob],
+  );
+  assert.deepEqual(entries[1].reviewers, [members.alice]);
+  assert.equal(await run(['check', file], f.root, () => {}), 0);
+  assert.equal(await f.read(), content);
+  // Repeated names in different sections are allowed, too.
+  assert.equal(parseAttributions(`${metadata}\n${metadata}`, names).length, 2);
+});
+
+test('check validates later section lines and reports their line numbers', async (t) => {
+  for (const invalid of [
+    metadata.replace(members.alice, 'Unknown'),
+    metadata.replace('None yet', members.alice),
+    metadata.replace('**Edited by:** None', `**Edited by:** ${members.bob}, ${members.bob}`),
+    metadata.replace('**Performed by:**', '**Performed by**:'),
+    metadata.replace(' · ', ' | '),
+  ]) {
+    const content = `${metadata}\n\n## Section\n${invalid}`;
+    const f = await fixture(t, content);
+    const messages = [];
+    assert.equal(await run(['check', file], f.root, (message) => messages.push(message)), 1);
+    assert.match(messages[0], /Line 4:/);
+    assert.equal(await f.read(), content);
+  }
+});
+
+test('single-line write parser rejects invalid metadata and requires manual selection for sections', () => {
   for (const content of [
     '# No metadata',
     metadata.replace(members.alice, ''),
@@ -328,7 +369,7 @@ test('changed-file check handles spaces, additions, renames, deletion and unrela
       }),
     (error) =>
       error.status === 1 &&
-      /with spaces\.md: Expected exactly one attribution line/.test(error.stdout.toString()),
+      /with spaces\.md: Expected at least one attribution line/.test(error.stdout.toString()),
   );
   await writeFile(path.join(f.root, 'docs/academic/with spaces.md'), metadata);
   git('add', 'docs/academic/with spaces.md');

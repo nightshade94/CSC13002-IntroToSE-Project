@@ -310,8 +310,10 @@ merge mapping/scope changes separately before relying on them in another PR.
 The bot proposes the mapped PR author as performer for a new document without metadata,
 or as an editor for an existing valid document. Existing valid performers are never
 overwritten. Existing reviewers/editors are preserved, including the history in the PR
-base. Missing, malformed, repeated, or conflicting legacy attribution requires manual
-correction; the eight-document migration inventory below still applies.
+base. Per-section attribution is valid and passes CI when every line is valid. The bot
+and write CLI currently require one line per file because their commands select whole
+documents. Update section metadata manually; preserve each section's contribution history.
+Missing, malformed, or conflicting attribution also requires manual correction.
 
 Inspect the paths and names in the bot comment. A human collaborator with actual
 repository **write**, **maintain**, or **admin** permission can post this exact command
@@ -342,7 +344,7 @@ the updated bot comment, then post `/apply-attribution`. For new documents this 
 the default creator before initialization. For existing documents it changes the proposed
 editor and preserves the performer. Correct an already recorded inaccurate performer or
 other historical attribution manually with team agreement and normal PR review; the bot
-will refuse to silently replace history. Fix legacy documents manually rather than
+will refuse to silently replace history. Fix section metadata manually rather than
 removing attribution merely to make automation pass. A mixed PR containing blocked
 documents is not partially applied.
 
@@ -417,11 +419,25 @@ adding a small academic document without metadata: CI should fail and the bot sh
 propose its creator. Confirm, inspect the bot-only diff and CI on the new SHA, obtain a
 peer approval, confirm that peer on that specific document, then verify CI and final
 approval again. Also try a stale proposal, an unauthorized account and a fork PR; none
-should update a branch. Do not use the eight legacy documents as disposable test fixtures.
+should update a branch. Do not use existing academic documents as disposable test fixtures.
+
+### Expected skipped jobs
+
+- **CI / Report bot commit CI result** runs only for `workflow_dispatch`, after a bot
+  metadata commit requests CI. It is intentionally skipped on ordinary `pull_request`
+  and `push` runs; **Repository quality** validates those runs directly.
+- **Document attribution / apply** runs only for PR `issue_comment` events starting
+  with `/apply-attribution` or `/apply-review-attribution`. Opening/updating a PR or
+  submitting a review proposes attribution without applying it, so `apply` is skipped.
+
+These skipped jobs do not indicate a failed validation. Inspect **Repository quality**
+for formatting, tests, and academic metadata failures.
 
 ### Fields and manual CLI fallback
 
-Each managed document must have exactly one canonical attribution line:
+Each managed document must have at least one canonical attribution line. Attribution
+may appear after the document title and after individual section headings; each line
+is validated independently, and different sections may have different contributors:
 
 ```markdown
 **Performed by:** Tên đầy đủ đã xác nhận · **Reviewed by:** None yet · **Edited by:** None
@@ -465,44 +481,29 @@ the structure, exact mapped names, delimiters, duplicates, and self-review witho
 No metadata automation is added to Husky: contributors deliberately invoke this CLI,
 while CI only validates.
 
-### Existing documents and migration
+### Existing documents and section attribution
 
-The repository currently uses per-section attribution, sometimes multiple performers,
-`[None]` for editors, and `None` for unreviewed documents. The draft team contract also
-describes attribution on every section. This helper adopts **one summary line per document**;
-the team must reconcile that draft convention before migrating affected documents.
-No existing academic document has been automatically rewritten.
+Keep valid per-section attribution in place. Repeated lines across sections are allowed;
+there is no requirement to collapse them into a document summary. The checker ignores
+fenced examples and ordinary prose mentioning field labels, but validates every actual
+attribution line, including names, delimiters, duplicates within a field, and self-review
+within that line. Errors identify the offending source line.
 
-The initial migration inventory is:
+The write CLI and PR bot still operate on documents with one attribution line. For a
+file with multiple lines, manually update only the sections actually edited or reviewed,
+then run `pnpm docs:meta check <file.md>`. Do not remove valid section attribution to
+make the write helper accept a file.
 
-- `docs/analysis-and-design/overview.md`: missing attribution.
-- `docs/management/team-contract.md`: repeated section attribution, multiple performers,
-  and a separate draft review-status line.
-- `docs/discussion/P01/TA-consultation-prep/Function & actors.md`: repeated section
-  attribution and `[None]`; preserve the already recorded reviewer after team confirmation.
-- `docs/discussion/P01/TA-consultation-prep/member-roles-and-scope.md`: repeated section
-  attribution and `[None]`.
-- `docs/discussion/P01/TA-consultation-prep/meeting-document.md`: repeated attribution
-  and `[None]`.
-- `docs/discussion/P01/TA-consultation-prep/overview.md` and `test.md` in the same
-  directory: `[None]`.
-- `docs/discussion/P01/TA-consultation-prep/app-survey.md`: `Reviewed by: None`.
-
-For each migration, confirm the main performer and all prior reviewers/editors with the
-team. Keep verified names; do not discard distinct section contributions just to satisfy
-the checker. Agree how they are represented in the summary and preserve any detailed
-section history in ordinary prose or a contribution table without metadata field labels.
-If a single main performer cannot be agreed, leave the document pending migration.
-Manually reconcile extra attribution lines and the contract's separate review-status
-line; the checker intentionally rejects attribution-like lines outside fenced examples.
-Use `None yet` and `None` only when those fields truly have no confirmed contributors.
-Then run `check` on that file and have the migration reviewed.
+Some older documents still use `[None]` for editors, `None` for unreviewed documents,
+or lack attribution. Correct those fields manually while preserving confirmed names:
+use `None yet` for no reviewers and `None` for no editors. Repeated section attribution
+by itself needs no migration. No existing academic document is automatically rewritten.
 
 During bootstrap, CI runs tests and validates only managed files added, edited, or renamed
 between the PR base and its checked-out result (and the previous commit range on pushes
 to `main`). Deleted documents are skipped. General documentation is excluded. Thus this
 tooling PR does not require invented attribution for untouched legacy documents.
-Changing a legacy academic file requires migrating that file first. Locally, the same
+Changing an academic file requires every attribution line in that file to be valid. Locally, the same
 read-only selection is available with `pnpm docs:meta check --changed <base-commit>`;
 it compares committed snapshots, so use an explicit path to check uncommitted edits.
 Changing the mapping or scope alone does not revalidate untouched files during bootstrap;

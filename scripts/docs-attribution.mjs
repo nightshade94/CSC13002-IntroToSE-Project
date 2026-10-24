@@ -188,7 +188,7 @@ export function renderProposal(pr, proposal, message = '', appliedHead) {
     'Authorized collaborators: `/apply-attribution` applies the displayed author/editor proposal.',
     'For a reviewer, explicitly confirm the documents: `/apply-review-attribution {"reviewer":"username","files":["docs/path.md"]}`.',
     'Corrections: `/propose-attribution {"users":{"docs/path.md":"actual-creator-or-editor"}}`, inspect the new proposal, then confirm.',
-    'Fork writes are disabled. Legacy/malformed attribution needs the manual CLI.',
+    'Fork writes are disabled. For per-section attribution, edit the relevant section lines manually and run docs:meta check. Missing/malformed metadata also needs manual correction.',
     'After a metadata commit, verify the final version and approve again. Final approvals never trigger commits.',
   );
   const state = {
